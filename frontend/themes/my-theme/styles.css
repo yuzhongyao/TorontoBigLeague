@@ -244,6 +244,11 @@ a{
     position: relative;
     margin: auto;
   }
+   /*youtube video*/
+      iframe{
+          width:1025px !important;
+          height:576px !important;
+      }
 
 .form-container{
     /*width:50% !important;
@@ -321,6 +326,12 @@ li{
       margin: auto;
     }
 
+  /*youtube video*/
+     iframe{
+        width:700px !important;
+        height:393px !important;
+     }
+
 /*poster container div*/
 .poster-container{
     text-align:start;
@@ -390,6 +401,12 @@ li{
         position: relative;
         margin: auto;
       }
+
+   /*youtube video*/
+    iframe{
+        width:320px !important;
+        height:180px !important;
+    }
 
 /*footer social media div*/
 .social-container{
