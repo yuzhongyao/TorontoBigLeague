@@ -230,8 +230,10 @@ a{
 }
 
 .footer-container{
+    margin-top:20px !important;
     background-color: #DD232B;
     padding-top:20px;
+    padding-bottom:30px !important;
 }
 
 /* Styles for screens larger than 1024px (desktop) */
