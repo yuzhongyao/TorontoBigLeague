@@ -1,5 +1,6 @@
 package com.example.demo.views;
 
+import com.example.demo.views.components.Footer;
 import com.example.demo.views.components.Video;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.html.Div;
@@ -122,6 +123,7 @@ public class MainView extends VerticalLayout {
         main.add(new Footer());
         add(videoContainer);
         add(main);
+
 
         this.setPadding(false);
         this.addClassName("e");
