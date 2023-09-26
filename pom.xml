@@ -87,6 +87,21 @@
 	<profiles>
 		<profile>
 			<id>production</id>
+			<dependencies>
+				<dependency>
+					<groupId>com.vaadin</groupId>
+					<artifactId>vaadin</artifactId>
+					<exclusions>
+						<exclusion>
+							<groupId>com.vaadin</groupId>
+							<artifactId>vaadin-dev</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+			</dependencies>
+			<properties>
+				<vaadin.productionMode>true</vaadin.productionMode>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
