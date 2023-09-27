@@ -19,6 +19,11 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>com.vaadin</groupId>
+			<!-- Replace artifactId with vaadin-core to use only free components -->
+			<artifactId>vaadin-core</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -90,7 +95,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>com.vaadin</groupId>
-					<artifactId>vaadin</artifactId>
+					<artifactId>vaadin-core</artifactId>
 					<exclusions>
 						<exclusion>
 							<groupId>com.vaadin</groupId>
