@@ -6,12 +6,16 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
+import jakarta.servlet.ServletContext;
 
 @PageTitle("Toronto Big League")
 @Route(value = "", layout = MainLayout.class)
-public class MainView extends VerticalLayout {
+public class MainView extends VerticalLayout implements BeforeEnterObserver {
 
     public MainView(){
         add(new MainLayout());
@@ -127,5 +131,16 @@ public class MainView extends VerticalLayout {
 
         this.setPadding(false);
         this.addClassName("e");
+    }
+
+    @Override
+    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
+        // Check if it's the user's first visit (you can use a session attribute)
+        boolean isFirstVisit = !VaadinSession.getCurrent().getAttribute("visited").equals(Boolean.TRUE);
+
+        if (isFirstVisit) {
+            // Redirect to another page (e.g., "welcome" view)
+            beforeEnterEvent.rerouteTo("/aboutus");
+        }
     }
 }
