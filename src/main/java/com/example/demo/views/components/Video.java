@@ -18,6 +18,7 @@ public class Video extends HtmlContainer {
         getElement().setProperty("autoplay", true);
         getElement().setProperty("loop", true);
         getElement().setProperty("muted", true);
+        getElement().setProperty("allowfullscreen",false);
     }
 
     public Video(String src) {
@@ -26,6 +27,7 @@ public class Video extends HtmlContainer {
         getElement().setProperty("autoplay", true);
         getElement().setProperty("loop", true);
         getElement().setProperty("muted", true);
+        getElement().setProperty("allowfullscreen",false);
 
     }
 
