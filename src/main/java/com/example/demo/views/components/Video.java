@@ -11,17 +11,12 @@ public class Video extends HtmlContainer {
             "src",
             ""
     );
-    private static final PropertyDescriptor<String, String> typeDescriptor = PropertyDescriptors.attributeWithDefault(
-            "type",
-            "video/mp4" // Set the default type as "video/mp4"
-    );
 
     public Video() {
         super();
         getElement().setProperty("autoplay", true);
         getElement().setProperty("loop", true);
         getElement().setAttribute("muted", true);
-        setType("video/mp4"); // Set the type attribute
     }
 
     public Video(String src) {
@@ -29,7 +24,7 @@ public class Video extends HtmlContainer {
         getElement().setProperty("autoplay", true);
         getElement().setProperty("loop", true);
         getElement().setAttribute("muted", true);
-        setType("video/mp4"); // Set the type attribute
+
     }
 
     public String getSrc() {
@@ -40,12 +35,4 @@ public class Video extends HtmlContainer {
         set(srcDescriptor, src);
     }
 
-    public String getType() {
-        return get(typeDescriptor);
-    }
-
-    public void setType(String type) {
-        set(typeDescriptor, type);
-    }
 }
-

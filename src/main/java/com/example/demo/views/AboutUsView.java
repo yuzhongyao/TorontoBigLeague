@@ -4,15 +4,12 @@ import com.example.demo.views.MainLayout;
 import com.example.demo.views.components.Footer;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
 
 @PageTitle("About Us")
 @Route(value = "/aboutus", layout = MainLayout.class)
-public class AboutUsView extends VerticalLayout implements BeforeEnterObserver {
+public class AboutUsView extends VerticalLayout {
 
     public AboutUsView(){
         //header
@@ -90,14 +87,5 @@ public class AboutUsView extends VerticalLayout implements BeforeEnterObserver {
     }
 
 
-    @Override
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        boolean isFirstVisit = !VaadinSession.getCurrent().getAttribute("visited").equals(Boolean.TRUE);
 
-        if (isFirstVisit) {
-            // Redirect to another page (e.g., "welcome" view)
-            VaadinSession.getCurrent().setAttribute("visited", Boolean.TRUE );
-            beforeEnterEvent.rerouteTo("/");
-        }
-    }
 }
