@@ -14,16 +14,27 @@ public class Video extends HtmlContainer {
 
     public Video() {
         super();
-        getElement().setProperty("autoplay", true);
-        getElement().setProperty("loop", true);
+        getElement().setAttribute("autoplay", true);
         getElement().setAttribute("muted", true);
+        getElement().setAttribute("loop", true);
+//        getElement().setAttribute("type", "video/mp4");
+        getElement().setAttribute("controls", false);
+        getElement().setAttribute("playsinline", true);
+        getElement().setAttribute("preload", "auto");
+        add(new Source());
     }
 
     public Video(String src) {
-        setSrc(src);
-        getElement().setProperty("autoplay", true);
-        getElement().setProperty("loop", true);
+//        setSrc(src);
+        getElement().setAttribute("autoplay", true);
         getElement().setAttribute("muted", true);
+        getElement().setAttribute("loop", true);
+//        getElement().setAttribute("type", "video/mp4");
+        getElement().setAttribute("controls", false);
+        getElement().setAttribute("playsinline", true);
+
+        getElement().setAttribute("preload", "auto");
+        add(new Source(src));
 
     }
 

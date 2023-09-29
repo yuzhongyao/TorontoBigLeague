@@ -1,6 +1,7 @@
 package com.example.demo.views;
 
 
+import com.example.demo.views.components.Footer;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
