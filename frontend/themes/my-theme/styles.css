@@ -240,8 +240,63 @@ a{
     padding-bottom:30px !important;
 }
 
+/* Styles for 4k screens*/
+@media screen and (min-width: 1921px){
+    /*youtube video*/
+          iframe{
+              width:1920px !important;
+              height:1080px !important;
+          }
+
+        li{
+            font-size:60px;
+        }
+
+         /*poster container div*/
+          .poster-container{
+              text-align:start;
+              padding-left:10px;
+                      padding-bottom:20px;
+              display: flex;           /* Enable Flexbox layout */
+              flex-direction: row;     /* Arrange items horizontally (left to right) */
+              justify-content: start;  /* Align items to the left */
+          }
+          /*poster container div*/
+            .poster-container2{
+                text-align:end;
+                padding-right:10px;
+                padding-bottom:20px;
+                display: flex;           /* Enable Flexbox layout */
+                flex-direction: row-reverse;     /* Arrange items horizontally (right to left) */
+                justify-content: end;  /* Align items to the left */
+            }
+
+        /*poster titles e.g. MIDDLE SCHOOL MADNESS*/
+        .poster-title{
+            font-size:80px;
+            margin-top:40px;
+            margin-bottom:40px;
+            color:#DD232B;
+        }
+        /*posters*/
+        .poster{
+            width:40vw;
+            max-width:700px;
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+        .title{
+            font-size:100px;
+            color:#DD232B !important;
+            margin-top:-150px !important;
+            font-weight:heavy;
+        }
+
+}
+
 /* Styles for screens larger than 1024px (desktop) */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) and (max-width: 1920px) {
   /* Your desktop-specific styles go here */
   /* Slideshow container */
   .slideshow-container {
