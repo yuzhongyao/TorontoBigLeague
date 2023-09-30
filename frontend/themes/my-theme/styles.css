@@ -287,11 +287,21 @@ a{
         }
 
         .title{
-            font-size:100px;
+            font-size:140px;
             color:#DD232B !important;
             margin-top:-150px !important;
             font-weight:heavy;
         }
+        .mobile{
+                  display:none;
+              }
+          .desktop{
+                  display:flex;
+              }
+          .laptop{
+                  display:none;
+
+          }
 
 }
 
