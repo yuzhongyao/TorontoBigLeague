@@ -7,6 +7,39 @@ video::-webkit-media-controls, video::-moz-media-controls, video::-o-media-contr
   display: none !important;
 }
 
+.splash-container{
+      height:100% !important;
+      background: #34343C;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+}
+.splash-container h1{
+    color:#DD232B;
+    font-size:10vh;
+}
+
+.splash-container a{
+    background-color:#DD232B;
+    color:#34343C;
+    margin-top:1%;
+    margin-left:40%;
+    margin-right:40%;
+    padding-top:1%;
+    padding-bottom:1%;
+    font-size:7vh;
+    text-align:center;
+    border-radius:15px;
+}
+
+.splash-container a:hover{
+    background-color:white;
+    text-decoration: none;
+    font-weight:700;
+}
+
+
 /*schedule grid cell*/
 vaadin-grid-cell-content{
     padding-left: 4px;
@@ -250,6 +283,15 @@ a{
 
         li{
             font-size:60px;
+        }
+
+        /*top left navbar image*/
+        .logo-image{
+            width:155px !important;
+        }
+        /*navbar links */
+        .navbar-link{
+            font-size:31px !important;
         }
 
          /*poster container div*/

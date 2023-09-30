@@ -23,6 +23,7 @@ public class MainLayout extends AppLayout {
         Image logoImage = new Image();
         logoImage.setSrc("images/bigleaguelogoWhite.png");
         logoImage.setWidth("125px");
+        logoImage.addClassName("logo-image");
 
         /*Desktop version */
         //logo
