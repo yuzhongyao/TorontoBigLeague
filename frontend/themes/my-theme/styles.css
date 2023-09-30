@@ -580,6 +580,16 @@ vaadin-form-layout{
 
 }
 
+.splash-container a{
+    margin-left:10%;
+    margin-right:10%;
+}
+.splash-container h1{
+    color:#DD232B;
+    font-size:6vh;
+}
+
+
     .mobile{
              display:flex;
               }
