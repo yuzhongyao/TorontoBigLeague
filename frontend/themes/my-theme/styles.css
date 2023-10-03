@@ -441,6 +441,11 @@ li{
       margin: auto;
     }
 
+  .splash-container a{
+    margin-left:20%;
+    margin-right:20%;
+  }
+
   /*youtube video*/
      iframe{
         width:700px !important;
@@ -509,6 +514,12 @@ li{
 
 /* Styles for screens smaller than 768px (mobile) */
 @media screen and (max-width: 767px) {
+
+   /* poster list elements*/
+   ul{
+    padding-left:0px;
+   }
+
   /* Your mobile-specific styles go here */
   .slideshow-container {
         max-width:300px;
@@ -516,7 +527,9 @@ li{
         position: relative;
         margin: auto;
       }
-
+video {
+    controls: none;
+}
    /*youtube video*/
     iframe{
         width:320px !important;

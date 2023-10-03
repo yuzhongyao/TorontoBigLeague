@@ -30,7 +30,7 @@ public class MainView extends VerticalLayout {
         videoContainer.setWidthFull();
         videoContainer.addClassName("video-container");
 
-        Video backgroundVideo = new Video("videos/TBLTrim.mp4");
+        Video backgroundVideo = new Video("https://dpaacptq7x5t0.cloudfront.net/TBLTrim.mp4");
         videoContainer.add(backgroundVideo);
         backgroundVideo.addClassName("background-video");
 
