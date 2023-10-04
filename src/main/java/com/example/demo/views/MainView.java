@@ -34,6 +34,15 @@ public class MainView extends VerticalLayout {
         videoContainer.add(backgroundVideo);
         backgroundVideo.addClassName("background-video");
 
+        //background image
+        Div imageContainer = new Div();
+        imageContainer.setWidthFull();
+        imageContainer.addClassName("image-container");
+
+        Image backgroundImage = new Image();
+        backgroundImage.setSrc("images/poster.jpg");
+        backgroundImage.addClassName("background-image");
+        imageContainer.add(backgroundImage);
 
         // Main content
         Div main = new Div();
@@ -122,6 +131,7 @@ public class MainView extends VerticalLayout {
         main.add(highDiv);
         main.add(new Footer());
         add(videoContainer);
+        add(imageContainer);
         add(main);
 
 

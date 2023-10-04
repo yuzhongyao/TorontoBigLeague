@@ -332,8 +332,8 @@ a{
 
         .title{
             font-size:140px;
-            color:#DD232B !important;
-            margin-top:-150px !important;
+            /*color:#DD232B !important;*/
+            color:white !important;
             font-weight:heavy;
         }
         .mobile{
@@ -346,6 +346,13 @@ a{
                   display:none;
 
           }
+          .background-video{
+                        display:inline;
+                    }
+                    .background-image{
+
+                      display:none;
+                    }
 
 }
 
@@ -412,8 +419,8 @@ li{
 
 .title{
     font-size:80px;
-    color:#DD232B !important;
-    margin-top:-150px !important;
+    /*color:#DD232B !important;*/
+    color:white !important;
     font-weight:heavy;
 }
 
@@ -427,6 +434,13 @@ li{
           display:none;
 
   }
+  .background-video{
+                display:inline;
+            }
+            .background-image{
+
+              display:none;
+            }
 
 
 
@@ -494,9 +508,9 @@ li{
     }
 
 .title{
-    font-size:60px;
-    color:#DD232B !important;
-    margin-top:-150px !important;
+    font-size:65px;
+    /*color:#DD232B !important;*/
+    color:white !important;
     font-weight:heavy;
 }
 
@@ -510,6 +524,15 @@ li{
               display:flex;
 
       }
+
+       .background-video{
+              display:inline;
+          }
+          .background-image{
+
+            display:none;
+          }
+
 }
 
 /* Styles for screens smaller than 768px (mobile) */
@@ -588,9 +611,9 @@ vaadin-form-layout{
 }
 
 .title{
-    font-size:50px;
-    color:#DD232B !important;
-    margin-top:-150px !important;
+    font-size:55px;
+    /*color:#DD232B !important;*/
+    color:white !important;
     font-weight:heavy;
 
 }
@@ -615,6 +638,21 @@ vaadin-form-layout{
              display:none;
 
           }
+
+    .background-video{
+        display:none;
+    }
+    .background-image{
+        width: 100vw;
+              height: 100vh;
+              object-fit: cover;
+              position: fixed;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              z-index: -1;
+    }
 
 }
 
