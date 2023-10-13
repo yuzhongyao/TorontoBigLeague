@@ -1,23 +1,27 @@
 package com.example.demo.data;
-
 import java.io.Serializable;
-import java.util.Date;
+public class HighSchoolSchedule {
 
-public class Schedule implements Serializable {
     private String grade;
     private String session1;
     private String session2;
     private String session3;
     private String session4;
     private String session5;
+    private String session6;
+    private String session7;
+    private String session8;
 
-    public  Schedule(String grade, String session1, String session2, String session3, String session4, String session5){
+    public HighSchoolSchedule(String grade, String session1, String session2, String session3, String session4, String session5, String session6, String session7, String session8) {
         this.grade = grade;
         this.session1 = session1;
         this.session2 = session2;
         this.session3 = session3;
         this.session4 = session4;
         this.session5 = session5;
+        this.session6 = session6;
+        this.session7 = session7;
+        this.session8 = session8;
     }
 
     public String getGrade() {
@@ -67,4 +71,29 @@ public class Schedule implements Serializable {
     public void setSession5(String session5) {
         this.session5 = session5;
     }
+
+    public String getSession6() {
+        return session6;
+    }
+
+    public void setSession6(String session6) {
+        this.session6 = session6;
+    }
+
+    public String getSession7() {
+        return session7;
+    }
+
+    public void setSession7(String session7) {
+        this.session7 = session7;
+    }
+
+    public String getSession8() {
+        return session8;
+    }
+
+    public void setSession8(String session8) {
+        this.session8 = session8;
+    }
 }
+
