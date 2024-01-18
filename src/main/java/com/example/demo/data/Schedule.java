@@ -2,27 +2,23 @@ package com.example.demo.data;
 
 public class Schedule {
 
-    private String Date;
+
     private String Time;
     private String Age;
     private String Home;
     private String Away;
 
-    public Schedule(String date, String time, String age, String home, String away) {
-        Date = date;
+    public Schedule( String time, String age, String home, String away) {
+
         Time = time;
         Age = age;
         Home = home;
         Away = away;
     }
 
-    public String getDate() {
-        return Date;
-    }
 
-    public void setDate(String date) {
-        Date = date;
-    }
+
+
 
     public String getTime() {
         return Time;
