@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Contact Us")
+@PageTitle("Contact Us | Toronto Big League")
 @Route(value = "/contactus", layout = MainLayout.class)
 public class ContactUsView extends VerticalLayout {
 

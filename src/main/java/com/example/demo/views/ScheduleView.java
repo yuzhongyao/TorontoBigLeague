@@ -16,7 +16,7 @@ import com.vaadin.flow.router.Route;
 
 import java.util.*;
 
-@PageTitle("Schedule")
+@PageTitle("Schedule | Toronto Big League")
 @Route(value = "/schedule", layout = MainLayout.class)
 
 public class ScheduleView extends VerticalLayout {

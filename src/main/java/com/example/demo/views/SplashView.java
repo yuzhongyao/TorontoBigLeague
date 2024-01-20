@@ -8,7 +8,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 
-@PageTitle("WELCOME")
+@PageTitle("Splash | Toronto Big League")
 @Route("")
 public class SplashView extends Div  {
 

@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("About Us")
+@PageTitle("About Us | Toronto Big League")
 @Route(value = "/aboutus", layout = MainLayout.class)
 public class AboutUsView extends VerticalLayout {
 

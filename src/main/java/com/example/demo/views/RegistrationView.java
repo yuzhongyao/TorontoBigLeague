@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Registration")
+@PageTitle("Registration | Toronto Big League")
 @Route(value = "/registration", layout = MainLayout.class)
 public class RegistrationView extends VerticalLayout {
 
