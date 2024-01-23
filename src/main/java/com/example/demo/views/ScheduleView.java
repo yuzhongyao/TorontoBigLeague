@@ -130,10 +130,10 @@ public class ScheduleView extends VerticalLayout {
                 new Schedule( "1PM", "Jr", "V3 Prep", "Project Excellence B"),
                 new Schedule( "2:30PM", "Sr", "Code Regional", "V3 Regional"),
                 new Schedule( "4PM", "Sr", "Shield", "Code GTA"),
-                new Schedule("5PM", "Jr", "BM Elite", "Oakville Prep"),
+                new Schedule("5PM", "Jr", "William Academy", "Oakville Prep"),
                 new Schedule( "6:30PM", "Sr", "Shield", "4 Ever Ballers"),
                 new Schedule("7:30PM", "Jr", "Oakville Prep", "Project Excellence B"),
-                new Schedule( "9PM", "Sr", "Team Trappings", "BM Elite")
+                new Schedule( "9PM", "Sr", "Team Trappings", "Oakville Prep")
 
         );
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
