@@ -101,11 +101,11 @@ public class ScheduleView extends VerticalLayout {
         sat.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
 
         List<Schedule> satList = Arrays.asList(
-                new Schedule("12PM", "Sr", "M&R", "IEM"),
+                new Schedule("12PM", "Sr", "M&R", "TDG Elite"),
                 new Schedule( "1PM", "Jr", "V3 Prep", "Oakville Prep"),
                 new Schedule("2:30PM", "Sr", "Shield", "M&R"),
                 new Schedule("3:30PM", "Sr", "V3 Regional", "Team Trappings"),
-                new Schedule("5PM", "Sr", "Shield", "IEM")
+                new Schedule("5PM", "Sr", "Shield", "TDG Elite")
 
                 );
 
