@@ -79,134 +79,35 @@ public class ScheduleView extends VerticalLayout {
 
         H1 sessionTitle = new H1();
         sessionTitle.setWidthFull();
-        sessionTitle.setText("Love & Basketball Tournament Schedule");
+        sessionTitle.setText("Schedule");
         sessionTitle.addClassName("center");
 
         Div div = new Div();
         div.setWidthFull();
         div.addClassName("center");
 
-        H2 teamTitle = new H2();
-        teamTitle.setText("Teams and Division");
-        teamTitle.addClassName("center");
-
-        H3 grade9Title = new H3("Grade 9");
-        grade9Title.addClassName("center");
-
-        UnorderedList grade9List = new UnorderedList();
-        grade9List.getStyle().setColor("black");
-        grade9List.add(new ListItem("Jump Basketball"),
-                new ListItem("Metro Elite"),
-                new ListItem("WC2P"),
-                new ListItem("Motion"));
-
-        H3 grade11Title = new H3("Grade 11");
-        grade11Title.addClassName("center");
-
-        UnorderedList grade11List = new UnorderedList();
-        grade11List.getStyle().setColor("black");
-        grade11List.add(new ListItem("Shield"),
-                new ListItem("6BB"),
-                new ListItem("Empower"),
-                new ListItem("Foundation Basketball"));
-
-        H3 grade12Title = new H3("Grade 12");
-        grade12Title.addClassName("center");
-
-        H4 grade12A = new H4("A");
-
-        UnorderedList grade12List = new UnorderedList();
-        grade12List.getStyle().setColor("black");
-        grade12List.add(new ListItem("M&R"),
-                new ListItem("Ballerz United"),
-                new ListItem("Foundation Basketball")
-                );
-
-        H4 grade12B = new H4("B");
-
-        UnorderedList grade12ListB = new UnorderedList();
-        grade12ListB.getStyle().setColor("black");
-        grade12ListB.add(new ListItem("WC2P"),
-                new ListItem("TMU Elite"),
-                new ListItem("True North")
-        );
-
-        div.add(teamTitle,grade9Title,grade9List,grade11Title,grade11List,grade12Title,grade12A,grade12List,grade12B,grade12ListB);
-
-        H2 satTitle = new H2();
-        satTitle.setWidthFull();
-        satTitle.setText(" Saturday February 17");
-        satTitle.addClassName("center");
-
-        Text satLocation = new Text("");
-
-        satLocation.setText("AT Bur Oak S.S., 933 Bur Oak Ave, Markham. Park and enter at the back of the school (Door ‘H’) by the portables");
-
-        Grid<Schedule> sat = new Grid<>(Schedule.class,false);
-        sat.getElement().getStyle().set("margin-left", "10px");
-        sat.getElement().getStyle().set("margin-right", "10px");
-        sat.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
-        sat.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
-        sat.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
-        sat.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
-
-        List<Schedule> satList = Arrays.asList(
-                new Schedule("8:15AM", "12", "M&R", "Foundation"),
-                new Schedule( "9:15AM", "12", "WC2P", "True North"),
-                new Schedule("10:15AM", "11", "Foundation", "Empower"),
-                new Schedule("11:15AM", "12", "Foundation", "Ballerz United"),
-                new Schedule("12:15PM", "11", "Shield", "Foundation"),
-                new Schedule("1:15PM", "12", "TMU", "True North"),
-                new Schedule("2:15PM", "12", "M&R", "Ballerz United")
-                );
-
-        sat.setItems(satList);
-
-        Text satLocation2 = new Text("");
-
-        satLocation2.setText("AT Bill Crothers S.S. 44 Main St Unionville. Park and enter at the back of the school");
-
-        Grid<Schedule> sat2 = new Grid<>(Schedule.class,false);
-        sat2.getElement().getStyle().set("margin-left", "10px");
-        sat2.getElement().getStyle().set("margin-right", "10px");
-        sat2.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
-        sat2.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
-        sat2.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
-        sat2.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
-
-        List<Schedule> satList2 = Arrays.asList(
-                new Schedule("6PM GYM A", "9", "Metro", "Jump"),
-                new Schedule( "6PM GYM B", "11", "Empower", "Shield"),
-                new Schedule("7PM GYM A", "9", "Motion", "WC2P"),
-                new Schedule("7PM GYM B", "12", "TMU", "WC2P"),
-                new Schedule("8PM GYM A", "11", "6BB", "Shield"),
-                new Schedule("8PM GYM B", "9", "WC2P", "Jump"),
-                new Schedule("9PM GYM A", "9", "Jump", "Motion"),
-                new Schedule("9PM GYM B", "11", "6BB", "Empower")
-                );
-        sat2.setItems(satList2);
 
         H2 sunTitle = new H2();
         sunTitle.setWidthFull();
-        sunTitle.setText("Sunday February 18");
+        sunTitle.setText("Sunday March 3");
 
 
         Text sunLocation = new Text("");
-        sunLocation.setText("AT Miliken Mills H.S., 7522 Kennedy Rd, Markham");
+        sunLocation.setText("AT O'Neil CVI, 301 Simcoe St N, Oshawa, ON L1G 4T2");
 
         Grid<Schedule> sun = new Grid<>(Schedule.class,false);
         sun.getElement().getStyle().set("margin-left", "10px");
         sun.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> sunList = Arrays.asList(
-                new Schedule("8:30AM", "11", "6BB", "Foundation"),
-                new Schedule( "9:30AM", "9", "WC2P", "Metro"),
-                new Schedule( "10:30AM", "12", "A3", "B3"),
-                new Schedule( "11:30AM Semi-finals", "12", "A1", "B2"),
-                new Schedule( "12:30PM Semi-finals", "12", "B1", "A2"),
-                new Schedule("1:30PM Finals", "11", "A1", "A2"),
-                new Schedule( "2:30PM Finals", "12", "Semi winner", "Semi winner"),
-                new Schedule("3:30PM Finals", "9", "A1", "A2")
+                new Schedule("12PM", "JR", "BM Elite", "William Academy"),
+                new Schedule( "1PM", "SR", "William Academy", "Project Excellence"),
+                new Schedule( "2PM", "SR", "True North Elite", "Mamba Elite"),
+                new Schedule( "3PM", "JR", "BM Elite", "Motion Elite"),
+                new Schedule( "5PM", "SR", "JKT", "M&R"),
+                new Schedule("6PM", "JR", "Motion Elite", "Project Excellence"),
+                new Schedule( "7PM", "SR", "True North Elite", "4Ever Ballers"),
+                new Schedule("8PM", "SR", "Project Excellence", "M&R")
 
         );
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
@@ -223,7 +124,7 @@ public class ScheduleView extends VerticalLayout {
 
         Html br = new Html("<br>");
         Html br1 = new Html("<br>");
-        add(div,satTitle, disclaimer,br, br1, satLocation,sat,satLocation2, sat2,sunTitle,sunLocation,sun);
+        add(div, disclaimer,br,br1, sunTitle,sunLocation,sun);
 
 
 
