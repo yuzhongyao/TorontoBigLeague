@@ -88,6 +88,23 @@ public class ScheduleView extends VerticalLayout {
         div.setWidthFull();
         div.addClassName("center");
 
+        H2 sr = new H2("Seniors");
+        sr.setWidthFull();
+        sr.addClassName("center");
+        H2 jr = new H2("Juniors");
+        jr.setWidthFull();
+        jr.addClassName("center");
+
+        UnorderedList jrList = new UnorderedList(
+                new ListItem("WC2P"),
+                new ListItem("Motion Elite"),
+                new ListItem("William Academy"),
+                new ListItem("Mamba Elite")
+        );
+        jrList.getStyle().setColor("black");
+        jrList.setWidthFull();
+        jrList.addClassName("center");
+
         HorizontalLayout pools = new HorizontalLayout();
         pools.setWidthFull();
         pools.setAlignItems(Alignment.CENTER);
@@ -124,7 +141,7 @@ public class ScheduleView extends VerticalLayout {
         H2 satTitle = new H2("Saturday March 16");
         satTitle.setWidthFull();
 
-        Text satLocation = new Text("AT Paramount Sports Thornhill, 130 Racco Pkwy, Thornhill, ON L4J 8X9");
+        Text satLocation = new Text("AT Paramount Sports Thornhill/King Heights Academy, 130 Racco Pkwy, Thornhill, ON L4J 8X9");
 
         Grid<Schedule> sat = new Grid<>(Schedule.class, false);
         sat.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
@@ -132,6 +149,8 @@ public class ScheduleView extends VerticalLayout {
         sat.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> satList = Arrays.asList(
+                new Schedule("8AM", "JR", "William Academy", "Motion Elite"),
+                new Schedule("9AM", "JR", "Mamba Elite", "William Academy"),
                 new Schedule("11AM", "SR", "Team Trappings", "CODE GTA"),
                 new Schedule("12PM", "SR", "KICC", "CODE Regional"),
                 new Schedule("1PM", "SR", "Empower", "WC2P"),
@@ -162,6 +181,7 @@ public class ScheduleView extends VerticalLayout {
         sun.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> sunList = Arrays.asList(
+                new Schedule("12PM", "JR", "Motion Elite", "WC2P"),
                 new Schedule("G1 1PM", "SR", "A1", "B2"),
                 new Schedule( "G2 2PM", "SR", "B1", "A2"),
                 new Schedule( "3PM", "SR", "A3", "B3"),
@@ -184,7 +204,7 @@ public class ScheduleView extends VerticalLayout {
 
         Html br = new Html("<br>");
         Html br1 = new Html("<br>");
-        add(div, disclaimer, br, pools, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
+        add(div, disclaimer, br, sr, pools,jr, jrList, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
 
 
 
