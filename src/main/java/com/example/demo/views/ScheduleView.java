@@ -7,7 +7,9 @@ import com.example.demo.views.components.Footer;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -79,35 +81,93 @@ public class ScheduleView extends VerticalLayout {
 
         H1 sessionTitle = new H1();
         sessionTitle.setWidthFull();
-        sessionTitle.setText("Schedule");
+        sessionTitle.setText("Championship Schedule");
         sessionTitle.addClassName("center");
 
         Div div = new Div();
         div.setWidthFull();
         div.addClassName("center");
 
+        HorizontalLayout pools = new HorizontalLayout();
+        pools.setWidthFull();
+        pools.setAlignItems(Alignment.CENTER);
+        H3 poolA = new H3("POOL A");
+
+        UnorderedList listA = new UnorderedList(
+                new ListItem("KICC"),
+                new ListItem("CODE Regional"),
+                new ListItem("Team Trappings"),
+                new ListItem("CODE GTA")
+        );
+        listA.getStyle().setColor("black");
+
+        H3 poolB = new H3("POOL B");
+        UnorderedList listB = new UnorderedList(
+                new ListItem("Empower"),
+                new ListItem("BGC Thunderbolts"),
+                new ListItem("WC2P")
+        );
+        listB.getStyle().setColor("black");
+
+        VerticalLayout a = new VerticalLayout();
+        a.setAlignItems(Alignment.CENTER);
+        a.add(poolA,listA);
+        VerticalLayout b= new VerticalLayout();
+        b.setAlignItems(Alignment.CENTER);
+        b.add(poolB,listB);
+        pools.add(a,b);
+
+
+
+
+
+        H2 satTitle = new H2("Saturday March 16");
+        satTitle.setWidthFull();
+
+        Text satLocation = new Text("AT Paramount Sports Thornhill, 130 Racco Pkwy, Thornhill, ON L4J 8X9");
+
+        Grid<Schedule> sat = new Grid<>(Schedule.class, false);
+        sat.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
+        sat.getElement().getStyle().set("margin-left", "10px");
+        sat.getElement().getStyle().set("margin-right", "10px");
+
+        List<Schedule> satList = Arrays.asList(
+                new Schedule("11AM", "SR", "Team Trappings", "CODE GTA"),
+                new Schedule("12PM", "SR", "KICC", "CODE Regional"),
+                new Schedule("1PM", "SR", "Empower", "WC2P"),
+                new Schedule("2PM", "SR", "KICC", "CODE GTA"),
+                new Schedule("3PM", "SR", "Team Trappings", "CODE Regional"),
+                new Schedule("5PM", "SR", "Empower", "BGC Thunderbolts"),
+                new Schedule("7PM", "SR", "BGC Thunderbolts", "WC2P")
+                );
+
+        sat.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
+        sat.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
+        sat.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
+        sat.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
+
+        sat.setItems(satList);
 
         H2 sunTitle = new H2();
         sunTitle.setWidthFull();
-        sunTitle.setText("Sunday March 3");
+        sunTitle.setText("Sunday March 17");
 
 
         Text sunLocation = new Text("");
         sunLocation.setText("AT O'Neil CVI, 301 Simcoe St N, Oshawa, ON L1G 4T2");
 
         Grid<Schedule> sun = new Grid<>(Schedule.class,false);
+        sun.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
         sun.getElement().getStyle().set("margin-left", "10px");
         sun.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> sunList = Arrays.asList(
-                new Schedule("12PM", "JR", "BM Elite", "William Academy"),
-                new Schedule( "1PM", "SR", "William Academy", "Project Excellence"),
-                new Schedule( "2PM", "SR", "True North Elite", "Mamba Elite"),
-                new Schedule( "3PM", "JR", "BM Elite", "Motion Elite"),
-                new Schedule( "5PM", "SR", "JKT", "M&R"),
-                new Schedule("6PM", "JR", "Motion Elite", "Project Excellence"),
-                new Schedule( "7PM", "SR", "True North Elite", "4Ever Ballers"),
-                new Schedule("8PM", "SR", "Project Excellence", "M&R")
+                new Schedule("G1 1PM", "SR", "A1", "B2"),
+                new Schedule( "G2 2PM", "SR", "B1", "A2"),
+                new Schedule( "3PM", "SR", "A3", "B3"),
+                new Schedule( "4PM", "", "A4", "WC2P Jr"),
+                new Schedule( "7PM Finals", "SR", "WINNER G1", "WINNER G2"),
+                new Schedule("8:30PM Finals", "JR", "WC2P", "William Academy")
 
         );
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
@@ -124,7 +184,7 @@ public class ScheduleView extends VerticalLayout {
 
         Html br = new Html("<br>");
         Html br1 = new Html("<br>");
-        add(div, disclaimer,br,br1, sunTitle,sunLocation,sun);
+        add(div, disclaimer, br, pools, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
 
 
 
