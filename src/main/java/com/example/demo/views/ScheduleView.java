@@ -148,6 +148,7 @@ public class ScheduleView extends VerticalLayout {
         sat.getElement().getStyle().set("margin-left", "10px");
         sat.getElement().getStyle().set("margin-right", "10px");
 
+
         List<Schedule> satList = Arrays.asList(
                 new Schedule("8AM", "JR", "William Academy", "Motion Elite"),
                 new Schedule("9AM", "JR", "Mamba Elite", "William Academy"),
@@ -166,6 +167,7 @@ public class ScheduleView extends VerticalLayout {
         sat.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
 
         sat.setItems(satList);
+        sat.setAllRowsVisible(true);
 
         H2 sunTitle = new H2();
         sunTitle.setWidthFull();
@@ -196,6 +198,7 @@ public class ScheduleView extends VerticalLayout {
         sun.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
 
         sun.setItems(sunList);
+        sun.setAllRowsVisible(true);
 
 
         //saturday
