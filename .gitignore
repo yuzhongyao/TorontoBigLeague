@@ -1,17 +1,10 @@
 node_modules
 HELP.md
-target/
+#target
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-/target/
-.gradle
-build/
-!**/src/main/**/target/
-!**/src/test/**/target/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 .DS_Store
 
