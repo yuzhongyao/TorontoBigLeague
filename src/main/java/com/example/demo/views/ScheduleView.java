@@ -104,8 +104,8 @@ public class ScheduleView extends VerticalLayout {
 
 
         List<Schedule> satList = Arrays.asList(
-                new Schedule("8PM", "JR", "Team Active", "TPG"),
-                new Schedule("9PM", "SR", "Team Active", "Wedontmiss")
+                new Schedule("8PM", "JR", "BM Elite", "TPG"),
+                new Schedule("9PM", "SR", "Team Active 17U", "Wedontmiss")
                 );
 
         sat.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
@@ -130,11 +130,13 @@ public class ScheduleView extends VerticalLayout {
         sun.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> sunList = Arrays.asList(
-                new Schedule("11AM", "SR", "Project Excellence", "DC United"),
-                new Schedule("12PM", "JR", "BM Elite", "Team Active"),
-                new Schedule( "1PM", "SR", "Team Active", "BM Elite"),
+
+                new Schedule("11AM", "SR", "Kingston Elite", "Project Excellence"),
+                new Schedule("12PM", "SR", "Team Active 16U", "DC United"),
+                new Schedule( "1PM", "SR", "Team Active 17U", "BM Elite"),
                 new Schedule( "2PM", "JR", "Project Excellence", "BM Elite"),
-                new Schedule( "3PM", "SR", "Team Active", "DC United")
+                new Schedule("3PM", "SR", "Team Active 16U", "Kingston Elite"),
+                new Schedule( "4PM", "SR", "Team Active 17U", "DC United")
         );
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
         sun.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
