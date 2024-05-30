@@ -81,7 +81,7 @@ public class ScheduleView extends VerticalLayout {
 
         H1 sessionTitle = new H1();
         sessionTitle.setWidthFull();
-        sessionTitle.setText("April 13-14");
+        sessionTitle.setText("June 1-2");
         sessionTitle.addClassName("center");
 
         Div div = new Div();
