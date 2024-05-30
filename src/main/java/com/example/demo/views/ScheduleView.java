@@ -155,7 +155,9 @@ public class ScheduleView extends VerticalLayout {
 
         Html br = new Html("<br>");
         Html br1 = new Html("<br>");
-        add(div, disclaimer, br, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
+//        add(div, disclaimer, br, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
+        add(div, disclaimer, br1, sunTitle,sunLocation,sun);
+
 
 
 
