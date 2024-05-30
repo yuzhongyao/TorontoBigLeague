@@ -118,7 +118,7 @@ public class ScheduleView extends VerticalLayout {
 
         H2 sunTitle = new H2();
         sunTitle.setWidthFull();
-        sunTitle.setText("Sunday April 14");
+        sunTitle.setText("Sunday June 2");
 
 
         Text sunLocation = new Text("");
@@ -131,12 +131,14 @@ public class ScheduleView extends VerticalLayout {
 
         List<Schedule> sunList = Arrays.asList(
 
-                new Schedule("11AM", "SR", "Kingston Elite", "Project Excellence"),
-                new Schedule("12PM", "SR", "Team Active 16U", "DC United"),
-                new Schedule( "1PM", "SR", "Team Active 17U", "BM Elite"),
-                new Schedule( "2PM", "JR", "Project Excellence", "BM Elite"),
-                new Schedule("3PM", "SR", "Team Active 16U", "Kingston Elite"),
-                new Schedule( "4PM", "SR", "Team Active 17U", "DC United")
+                new Schedule("11AM", "JR", "PMG Elite", "V3"),
+                new Schedule("12PM", "Grade 8", "Jaxx City", "V3"),
+                new Schedule( "1PM", "SR", "V3", "True North"),
+                new Schedule( "2PM", "SR", "Project Excellence", "PMG Elite"),
+                new Schedule("3PM", "SR", "Jean Vanier", "V3"),
+                new Schedule( "4PM", "JR", "BM Elite", "PMG Elite"),
+                new Schedule( "5PM", "SR", "Jean Vanier", "PMG Elite"),
+                new Schedule( "6PM", "JR", "V3", "Project Excellence")
         );
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
         sun.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
