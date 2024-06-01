@@ -91,27 +91,37 @@ public class MainView extends VerticalLayout {
         Div highDiv = new Div();
         H2 highTitle = new H2();
         highTitle.addClassName("center");
-        highTitle.setText("HIGH SCHOOL MADNESS");
+        highTitle.setText("TBL PREP");
         highTitle.addClassName("white");
         highTitle.addClassName("poster-title");
         highDiv.add(highTitle);
         //high school poster div
         Div highPosterDiv = new Div();
-        highPosterDiv.addClassName("poster-container2");
+        highPosterDiv.addClassName("center");
+
+//        highPosterDiv.addClassName("poster-container2");
         //high school poster
-        Image highPoster = new Image();
-        highPoster.setSrc("images/highschool.jpg");
-        highPoster.addClassName("poster");
+        Image prep1 = new Image();
+        prep1.setSrc("images/bigprep1.jpg");
+        prep1.addClassName("poster");
+
+        Image prep2 = new Image();
+        prep2.setSrc("images/bigprep2.jpg");
+        prep2.addClassName("poster");
 
 
         //high school list of league features
         UnorderedList highList = new UnorderedList();
-        ListItem item8 = new ListItem("Each team has 14 Games Guaranteed");
-        ListItem item9 = new ListItem("$2,600 per team with a multi-team discount of $2,300 per team if you are able to bring 3 or more teams!");
-        ListItem item10 = new ListItem("Games are live streamed on BallerTV");
-        ListItem item11 = new ListItem("Games are uploaded to YouTube");
-        ListItem item12 = new ListItem("Individual player stat keeping using BallerTV software");
-        ListItem item13 = new ListItem("All Stars and MVPs will receive an Adidas prizepack");
+        ListItem item8 = new ListItem("$750 per session");
+        ListItem item9 = new ListItem("4 games per session");
+        ListItem item10 = new ListItem("Teams MUST commit to at least 2 sessions");
+        ListItem item11 = new ListItem("GUARANTEED PRICE FREEZE for fully registered teams that return every year");
+        ListItem item12 = new ListItem("Early registrants before July 5 are able to receive Adidas Team Pack");
+        ListItem item13 = new ListItem("Full games recorded and uploaded to YouTube");
+        ListItem item14 = new ListItem("Team highlight videos on social media");
+
+
+
         //ListItem item14 = new ListItem("WINNING TEAM FROM EACH GRADE EARNS FREE ENTRY INTO ANY ADIDAS JR3SSB CIRCUIT SESSION!");
         highList.add(item8);
         highList.add(item9);
@@ -119,15 +129,16 @@ public class MainView extends VerticalLayout {
         highList.add(item11);
         highList.add(item12);
         highList.add(item13);
-        //highList.add(item14);
+        highList.add(item14);
 
-        highPosterDiv.add(highPoster);
+        highPosterDiv.add(prep1);
+        highPosterDiv.add(prep2);
         highPosterDiv.add(highList);
         highDiv.add(highPosterDiv);
 
 
 
-        main.add(middleDiv);
+//        main.add(middleDiv);
         main.add(highDiv);
         main.add(new Footer());
         add(videoContainer);
