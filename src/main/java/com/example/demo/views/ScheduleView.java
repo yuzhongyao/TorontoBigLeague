@@ -81,31 +81,74 @@ public class ScheduleView extends VerticalLayout {
 
         H1 sessionTitle = new H1();
         sessionTitle.setWidthFull();
-        sessionTitle.setText("June 1-2");
+        sessionTitle.setText("June 8-9 Summer Kickoff Tournament");
         sessionTitle.addClassName("center");
 
         Div div = new Div();
         div.setWidthFull();
         div.addClassName("center");
 
+        VerticalLayout teams = new VerticalLayout();
+
+        VerticalLayout g6 = new VerticalLayout();
+        g6.setAlignSelf(Alignment.CENTER);
+        H4 g6title = new H4("Grade 6");
+        UnorderedList g6teams = new UnorderedList(new ListItem("Jaxx City"), new ListItem("Project Excellence"), new ListItem("IEM"), new ListItem("MBA"));
+        g6teams.getStyle().setColor("Black");
+        g6teams.setVisible(true);
+        g6.add(g6title,g6teams);
+
+        VerticalLayout g10 = new VerticalLayout();
+        g10.setAlignSelf(Alignment.CENTER);
+        H4 g10title = new H4("Grade 10");
+        UnorderedList g10teams = new UnorderedList(new ListItem("DKH"), new ListItem("Project Excellence"), new ListItem("FBA Durham"), new ListItem("MBA"));
+        g10teams.getStyle().setColor("Black");
+        g10teams.setVisible(true);
+        g10.add(g10title,g10teams);
+
+        VerticalLayout g12 = new VerticalLayout();
+        H5 pa = new H5("Pool A");
+        g12.setAlignSelf(Alignment.CENTER);
+        H4 g12title = new H4("Grade 12");
+        UnorderedList g12teams = new UnorderedList(new ListItem("Project Excellence A"), new ListItem("PMG Elite"), new ListItem("WC2P"));
+        g12teams.getStyle().setColor("Black");
+        g12teams.setVisible(true);
+
+        H5 pb = new H5("Pool B");
+        UnorderedList g122teams = new UnorderedList(new ListItem("True North"), new ListItem("Project Excellence B"), new ListItem("DC United"), new ListItem("MBA"));
+        g122teams.getStyle().setColor("Black");
+        g122teams.setVisible(true);
+        g12.add(g12title,pa, g12teams,pb, g122teams);
+
+        teams.add(g6,g10,g12);
 
 
 
 
-        H2 satTitle = new H2("Saturday April 13");
+        H2 satTitle = new H2("Saturday June 8");
         satTitle.setWidthFull();
 
-        Text satLocation = new Text("AT Bill Crothers S.S.");
+        Text satLocation = new Text("AT O'Neil CVI. 301 Simcoe St N, Oshawa, ON L1G 4T2");
 
         Grid<Schedule> sat = new Grid<>(Schedule.class, false);
         sat.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
-        sat.getElement().getStyle().set("margin-left", "10px");
-        sat.getElement().getStyle().set("margin-right", "10px");
+//        sat.getElement().getStyle().set("margin-left", "10px");
+//        sat.getElement().getStyle().set("margin-right", "10px");
 
 
         List<Schedule> satList = Arrays.asList(
-                new Schedule("8PM", "JR", "BM Elite", "TPG"),
-                new Schedule("9PM", "SR", "Team Active 17U", "Wedontmiss")
+                new Schedule("10AM", "Grade 6", "Jaxx City", "MBA"),
+                new Schedule("11AM", "Grade 10", "MBA", "Project Excellence"),
+                new Schedule( "12PM", "Grade 12", "Project Excellence B", "MBA"),
+                new Schedule( "1PM", "Grade 6", "Project Excellence", "MBA"),
+                new Schedule("2PM", "Grade 10", "MBA", "DKH"),
+                new Schedule( "3PM", "Grade 12", "Project Excellence A", "PMG Elite"),
+                new Schedule( "4PM", "Grade 12", "DC United", "MBA"),
+                new Schedule( "5PM", "Grade 10", "Project Excellence", "DKH"),
+                new Schedule( "6PM", "Grade 12", "DC United", "True North"),
+                new Schedule( "7PM", "Grade 12", "PMG Elite", "WC2P"),
+                new Schedule( "8PM", "Grade 12", "True North", "Project Excellence B"),
+                new Schedule( "9PM", "Grade 12", "Project Excellence A", "WC2P")
                 );
 
         sat.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
@@ -116,30 +159,47 @@ public class ScheduleView extends VerticalLayout {
         sat.setItems(satList);
         sat.setAllRowsVisible(true);
 
+        Text satLocation2 = new Text("AT Alpha High Performance Centre, 455 Addison Hall Cir Unit 11-13, Aurora, ON L4G 3X8");
+        Grid<Schedule> sat2 = new Grid<>(Schedule.class, false);
+        sat2.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
+//        sat2.getElement().getStyle().set("margin-left", "10px");
+//        sat2.getElement().getStyle().set("margin-right", "10px");
+
+        List<Schedule> satList2 = Arrays.asList(
+                new Schedule("4PM", "Grade 6", "Jaxx City", "IEM"),
+                new Schedule("6PM", "Grade 6", "Jaxx City", "Project Excellence"),
+                new Schedule( "8PM", "Grade 6", "Project Excellence B", "IEM"),
+                new Schedule( "9PM", "Grade 10", "Project Excellence", "FBA Durham")
+        );
+
+        sat2.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
+        sat2.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
+        sat2.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
+        sat2.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
+
+        sat2.setItems(satList2);
+        sat2.setAllRowsVisible(true);
+
         H2 sunTitle = new H2();
         sunTitle.setWidthFull();
-        sunTitle.setText("Sunday June 2");
+        sunTitle.setText("Sunday June 9");
 
 
         Text sunLocation = new Text("");
-        sunLocation.setText("AT O'Neil CVI, 301 Simcoe St N, Oshawa, ON L1G 4T2");
+        sunLocation.setText("Alpha High Performance Centre, 455 Addison Hall Cir Unit 11-13, Aurora, ON L4G 3X8");
 
         Grid<Schedule> sun = new Grid<>(Schedule.class,false);
         sun.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
-        sun.getElement().getStyle().set("margin-left", "10px");
-        sun.getElement().getStyle().set("margin-right", "10px");
+//        sun.getElement().getStyle().set("margin-left", "10px");
+//        sun.getElement().getStyle().set("margin-right", "10px");
 
         List<Schedule> sunList = Arrays.asList(
 
-                new Schedule("11AM", "JR", "PMG Elite", "V3"),
-                new Schedule("12PM", "Grade 8", "Jaxx City", "V3"),
-                new Schedule( "1PM", "SR", "V3", "True North"),
-                new Schedule( "2PM", "SR", "Project Excellence", "PMG Elite"),
-                new Schedule("3PM", "SR", "Jean Vanier", "V3"),
-                new Schedule( "4PM", "JR", "BM Elite", "PMG Elite"),
-                new Schedule( "5PM", "SR", "Jean Vanier", "PMG Elite"),
-                new Schedule( "6PM", "JR", "V3", "Project Excellence")
-        );
+                new Schedule("10AM", "Grade 6", "IEM", "MBA")
+
+                );
+
+
         sun.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
         sun.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
         sun.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
@@ -148,6 +208,36 @@ public class ScheduleView extends VerticalLayout {
         sun.setItems(sunList);
         sun.setAllRowsVisible(true);
 
+        Text sunLocation2 = new Text("");
+        sunLocation2.setText("AT O'Neil CVI. 301 Simcoe St N, Oshawa, ON L1G 4T2");
+
+        Grid<Schedule> sun2 = new Grid<>(Schedule.class,false);
+        sun2.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
+//        sun2.getElement().getStyle().set("margin-left", "10px");
+//        sun2.getElement().getStyle().set("margin-right", "10px");
+
+        List<Schedule> sunList2 = Arrays.asList(
+
+                new Schedule("10:30AM", "Grade 10", "FBA Durham", "MBA"),
+                new Schedule("11:30AM G1", "Grade 12", "A1", "B2"),
+                new Schedule("12:30PM", "Grade 10", "FBA Durham", "DKH"),
+                new Schedule("1:30PM G2", "Grade 12", "B1", "A2"),
+                new Schedule("2:30PM FINALS", "Grade 10", "1st", "2nd"),
+                new Schedule("3:30PM", "Grade 12", "B3", "A3"),
+                new Schedule("4:30PM", "Grade 12", "B4", "Dream Chaserz"),
+                new Schedule("5:30PM FINALS", "Grade 6", "1st", "2nd"),
+                new Schedule("6:30PM FINALS", "Grade 12", "G1W", "G2W")
+
+                );
+
+
+        sun2.addColumn(Schedule::getTime).setHeader("Time").setAutoWidth(true);;
+        sun2.addColumn(Schedule::getAge).setHeader("Grade").setAutoWidth(true);;
+        sun2.addColumn(Schedule::getHome).setHeader("Home").setAutoWidth(true);;
+        sun2.addColumn(Schedule::getAway).setHeader("Away").setAutoWidth(true);;
+
+        sun2.setItems(sunList2);
+        sun2.setAllRowsVisible(true);
 
         //saturday
         add(sessionTitle);
@@ -155,8 +245,11 @@ public class ScheduleView extends VerticalLayout {
 
         Html br = new Html("<br>");
         Html br1 = new Html("<br>");
-//        add(div, disclaimer, br, satTitle, satLocation,sat, br1, sunTitle,sunLocation,sun);
-        add(div, disclaimer, br1, sunTitle,sunLocation,sun);
+        Html br2 = new Html("<br>");
+        Html br3 = new Html("<br>");
+        this.setAlignSelf(Alignment.CENTER);
+        add(div, disclaimer, br, teams, satTitle, satLocation,sat, br1, satLocation2, sat2, br2,  sunTitle,sunLocation,sun,br3, sunLocation2, sun2);
+//        add(div, disclaimer, br1, sunTitle,sunLocation,sun);
 
 
 
