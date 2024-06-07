@@ -93,7 +93,7 @@ public class ScheduleView extends VerticalLayout {
         VerticalLayout g6 = new VerticalLayout();
         g6.setAlignSelf(Alignment.CENTER);
         H4 g6title = new H4("Grade 6");
-        UnorderedList g6teams = new UnorderedList(new ListItem("Jaxx City"), new ListItem("Project Excellence"), new ListItem("IEM"), new ListItem("MBA"));
+        UnorderedList g6teams = new UnorderedList(new ListItem("Jaxx City"), new ListItem("Project Excellence"), new ListItem("IEM"), new ListItem("MUMBA Mentality"));
         g6teams.getStyle().setColor("Black");
         g6teams.setVisible(true);
         g6.add(g6title,g6teams);
@@ -101,7 +101,7 @@ public class ScheduleView extends VerticalLayout {
         VerticalLayout g10 = new VerticalLayout();
         g10.setAlignSelf(Alignment.CENTER);
         H4 g10title = new H4("Grade 10");
-        UnorderedList g10teams = new UnorderedList(new ListItem("DKH"), new ListItem("Project Excellence"), new ListItem("FBA Durham"), new ListItem("MBA"));
+        UnorderedList g10teams = new UnorderedList(new ListItem("DKH-GRE"), new ListItem("Project Excellence"), new ListItem("FBA Durham"), new ListItem("MBA"));
         g10teams.getStyle().setColor("Black");
         g10teams.setVisible(true);
         g10.add(g10title,g10teams);
@@ -137,14 +137,14 @@ public class ScheduleView extends VerticalLayout {
 
 
         List<Schedule> satList = Arrays.asList(
-                new Schedule("10AM", "Grade 6", "Jaxx City", "MBA"),
+                new Schedule("10AM", "Grade 6", "Jaxx City", "MUMBA Mentality"),
                 new Schedule("11AM", "Grade 10", "MBA", "Project Excellence"),
                 new Schedule( "12PM", "Grade 12", "Project Excellence B", "MBA"),
-                new Schedule( "1PM", "Grade 6", "Project Excellence", "MBA"),
-                new Schedule("2PM", "Grade 10", "MBA", "DKH"),
+                new Schedule( "1PM", "Grade 6", "Project Excellence", "MUMBA Mentality"),
+                new Schedule("2PM", "Grade 10", "MBA", "DKH-GRE"),
                 new Schedule( "3PM", "Grade 12", "Project Excellence A", "PMG Elite"),
                 new Schedule( "4PM", "Grade 12", "DC United", "MBA"),
-                new Schedule( "5PM", "Grade 10", "Project Excellence", "DKH"),
+                new Schedule( "5PM", "Grade 10", "Project Excellence", "DKH-GRE"),
                 new Schedule( "6PM", "Grade 12", "DC United", "True North"),
                 new Schedule( "7PM", "Grade 12", "PMG Elite", "WC2P"),
                 new Schedule( "8PM", "Grade 12", "True North", "Project Excellence B"),
@@ -186,7 +186,7 @@ public class ScheduleView extends VerticalLayout {
 
 
         Text sunLocation = new Text("");
-        sunLocation.setText("Alpha High Performance Centre, 455 Addison Hall Cir Unit 11-13, Aurora, ON L4G 3X8");
+        sunLocation.setText("Sir William Mulock S.S., 705 Columbus Way, Newmarket, ON L3X 2M7");
 
         Grid<Schedule> sun = new Grid<>(Schedule.class,false);
         sun.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
@@ -195,7 +195,7 @@ public class ScheduleView extends VerticalLayout {
 
         List<Schedule> sunList = Arrays.asList(
 
-                new Schedule("10AM", "Grade 6", "IEM", "MBA")
+                new Schedule("10AM", "Grade 6", "IEM", "MUMBA Mentality")
 
                 );
 
@@ -220,7 +220,7 @@ public class ScheduleView extends VerticalLayout {
 
                 new Schedule("10:30AM", "Grade 10", "FBA Durham", "MBA"),
                 new Schedule("11:30AM G1", "Grade 12", "A1", "B2"),
-                new Schedule("12:30PM", "Grade 10", "FBA Durham", "DKH"),
+                new Schedule("12:30PM", "Grade 10", "FBA Durham", "DKH-GRE"),
                 new Schedule("1:30PM G2", "Grade 12", "B1", "A2"),
                 new Schedule("2:30PM FINALS", "Grade 10", "1st", "2nd"),
                 new Schedule("3:30PM", "Grade 12", "B3", "A3"),
