@@ -223,7 +223,7 @@ public class ScheduleView extends VerticalLayout {
                 new Schedule("1:30PM G1", "Grade 12", "Project Excellence A", "MBA"),
                 new Schedule("2:30PM FINALS", "Grade 10", "Project Excellence", "2nd"),
                 new Schedule("3:30PM G2", "Grade 12", "DC United", "PMG Elite"),
-                new Schedule("4:30PM", "Grade 12", "B4", "Dream Chaserz"),
+                new Schedule("4:30PM", "Grade 12", "True North", "Dream Chaserz"),
                 new Schedule("5:30PM FINALS", "Grade 6", "1st", "2nd"),
                 new Schedule("6:30PM FINALS", "Grade 12", "G1W", "G2W")
 
