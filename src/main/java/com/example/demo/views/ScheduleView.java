@@ -219,11 +219,10 @@ public class ScheduleView extends VerticalLayout {
         List<Schedule> sunList2 = Arrays.asList(
 
                 new Schedule("10:30AM", "Grade 10", "FBA Durham", "MBA"),
-                new Schedule("11:30AM G1", "Grade 12", "A1", "B2"),
                 new Schedule("12:30PM", "Grade 10", "FBA Durham", "DKH-GRE"),
-                new Schedule("1:30PM G2", "Grade 12", "B1", "A2"),
-                new Schedule("2:30PM FINALS", "Grade 10", "1st", "2nd"),
-                new Schedule("3:30PM", "Grade 12", "B3", "A3"),
+                new Schedule("1:30PM G1", "Grade 12", "Project Excellence A", "MBA"),
+                new Schedule("2:30PM FINALS", "Grade 10", "Project Excellence", "2nd"),
+                new Schedule("3:30PM G2", "Grade 12", "DC United", "PMG Elite"),
                 new Schedule("4:30PM", "Grade 12", "B4", "Dream Chaserz"),
                 new Schedule("5:30PM FINALS", "Grade 6", "1st", "2nd"),
                 new Schedule("6:30PM FINALS", "Grade 12", "G1W", "G2W")
