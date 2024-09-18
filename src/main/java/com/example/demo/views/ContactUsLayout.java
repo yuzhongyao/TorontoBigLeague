@@ -143,9 +143,12 @@ public class ContactUsLayout extends FormLayout {
         FileBasedConfigurationBuilder<PropertiesConfiguration> builder = configs.propertiesBuilder("application.properties");
         Configuration config = builder.getConfiguration();
 
-        // Retrieve the credentials from the properties file
-        String username = config.getString("gmail.username");
-        String password = config.getString("gmail.password");
+        //        // Retrieve the credentials from the properties file
+//        String username = config.getString("gmail.username");
+//        String password = config.getString("gmail.password");
+        // Retrieve credentials from environment variables
+        String username = System.getenv("GMAIL");
+        String password = System.getenv("GMAIL_PASSWORD");
 
         Authenticator authenticator = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
