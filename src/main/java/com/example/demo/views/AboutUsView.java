@@ -6,9 +6,11 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 @PageTitle("About Us | Toronto Big League")
 @Route(value = "/aboutus", layout = MainLayout.class)
+@AnonymousAllowed
 public class AboutUsView extends VerticalLayout {
 
     public AboutUsView(){

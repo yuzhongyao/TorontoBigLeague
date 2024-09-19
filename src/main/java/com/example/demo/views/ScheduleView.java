@@ -13,11 +13,13 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 import java.util.*;
 
 @PageTitle("Schedule | Toronto Big League")
 @Route(value = "/schedule", layout = MainLayout.class)
+@AnonymousAllowed
 
 public class ScheduleView extends VerticalLayout {
 
