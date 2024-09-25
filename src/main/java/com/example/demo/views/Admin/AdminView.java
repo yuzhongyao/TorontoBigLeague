@@ -23,6 +23,8 @@ public class AdminView  extends VerticalLayout {
     private final SeasonsService seasonsService;
     private final LocationsService locationsService;
 
+
+
     public AdminView(AuthenticationContext authenticationContext, TeamsService teamsService, AgesService agesService, GamesService gamesService
     , SeasonsService seasonsService, LocationsService locationsService){
         this.authenticationContext = authenticationContext;

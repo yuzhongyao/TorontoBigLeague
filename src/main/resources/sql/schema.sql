@@ -2,9 +2,9 @@
 
 DROP TABLE IF EXISTS ages cascade;
 DROP TABLE IF EXISTS teams cascade;
-DROP TABLE IF EXISTS seasons;
-DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS seasons;
 
 CREATE TABLE ages(
     age_id SERIAL PRIMARY KEY,
@@ -38,12 +38,15 @@ CREATE TABLE games(
     home_pts SMALLINT,
     away_pts SMALLINT,
     game_date DATE,
+    game_time TIME,
     home_id INT,
     away_id INT,
     age_id INT,
     location_id INT,
+    season_id INT,
     FOREIGN KEY(home_id) REFERENCES teams(team_id),
     FOREIGN KEY(away_id) REFERENCES teams(team_id),
     FOREIGN KEY(age_id) REFERENCES ages(age_id),
-    FOREIGN KEY(location_id) REFERENCES locations(location_id)
+    FOREIGN KEY(location_id) REFERENCES locations(location_id),
+    FOREIGN KEY(season_id) REFERENCES seasons(season_id)
 );
