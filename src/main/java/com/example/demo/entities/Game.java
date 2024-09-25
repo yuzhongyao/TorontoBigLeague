@@ -36,4 +36,72 @@ public class Game {
     @ManyToOne
     @JoinColumn(name = "location_id")
     private Location location_id;
+
+    public Game() {
+    }
+
+    public int getGame_id() {
+        return game_id;
+    }
+
+    public void setGame_id(int game_id) {
+        this.game_id = game_id;
+    }
+
+    public short getHome_pts() {
+        return home_pts;
+    }
+
+    public void setHome_pts(short home_pts) {
+        this.home_pts = home_pts;
+    }
+
+    public short getAway_pts() {
+        return away_pts;
+    }
+
+    public void setAway_pts(short away_pts) {
+        this.away_pts = away_pts;
+    }
+
+    public LocalDate getGame_date() {
+        return game_date;
+    }
+
+    public void setGame_date(LocalDate game_date) {
+        this.game_date = game_date;
+    }
+
+    public Team getHome_id() {
+        return home_id;
+    }
+
+    public void setHome_id(Team home_id) {
+        this.home_id = home_id;
+    }
+
+    public Team getAway_id() {
+        return away_id;
+    }
+
+    public void setAway_id(Team away_id) {
+        this.away_id = away_id;
+    }
+
+    public Age getAge_id() {
+        return age_id;
+    }
+
+    public void setAge_id(Age age_id) {
+        this.age_id = age_id;
+    }
+
+    public Location getLocation_id() {
+        return location_id;
+    }
+
+    public void setLocation_id(Location location_id) {
+        this.location_id = location_id;
+    }
 }
+
