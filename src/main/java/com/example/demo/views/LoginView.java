@@ -12,7 +12,7 @@ import com.vaadin.flow.spring.security.AuthenticationContext;
 
 @Route("login")
 @AnonymousAllowed
-public class LoginView extends VerticalLayout implements BeforeEnterObserver {
+public class LoginView extends VerticalLayout  {
 
     private final transient AuthenticationContext authenticationContext;
 
@@ -28,11 +28,11 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         this.add(title, login);
     }
 
-    @Override
-    public void beforeEnter(BeforeEnterEvent event) {
-        if(authenticationContext.isAuthenticated()){
-            authenticationContext.logout();
-        }
-    }
+//    @Override
+//    public void beforeEnter(BeforeEnterEvent event) {
+//        if(authenticationContext.isAuthenticated()){
+//            authenticationContext.logout();
+//        }
+//    }
 
 }

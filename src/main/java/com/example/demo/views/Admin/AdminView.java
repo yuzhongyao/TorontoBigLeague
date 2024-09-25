@@ -11,7 +11,7 @@ import com.vaadin.flow.spring.security.AuthenticationContext;
 import jakarta.annotation.security.RolesAllowed;
 
 
-@Route("admin")
+@Route(value = "/admin", layout = AdminLayout.class)
 @RolesAllowed("ADMIN")
 public class AdminView  extends VerticalLayout {
 
