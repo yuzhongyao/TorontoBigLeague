@@ -3,6 +3,7 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 
+import java.sql.Time;
 import java.time.LocalDate;
 
 @Entity
@@ -20,6 +21,8 @@ public class Game {
 
     @Column
     private LocalDate game_date;
+    @Column
+    private Time game_time;
 
     @ManyToOne
     @JoinColumn(name = "home_id")
@@ -36,6 +39,10 @@ public class Game {
     @ManyToOne
     @JoinColumn(name = "location_id")
     private Location location_id;
+
+    @ManyToOne
+    @JoinColumn(name = "season_id")
+    private Season season;
 
     public Game() {
     }
@@ -72,6 +79,14 @@ public class Game {
         this.game_date = game_date;
     }
 
+    public Time getGame_time() {
+        return game_time;
+    }
+
+    public void setGame_time(Time game_time) {
+        this.game_time = game_time;
+    }
+
     public Team getHome_id() {
         return home_id;
     }
@@ -102,6 +117,14 @@ public class Game {
 
     public void setLocation_id(Location location_id) {
         this.location_id = location_id;
+    }
+
+    public Season getSeason() {
+        return season;
+    }
+
+    public void setSeason(Season season) {
+        this.season = season;
     }
 }
 
