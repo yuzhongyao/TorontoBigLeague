@@ -28,14 +28,13 @@ public class AdminLayout extends AppLayout {
         header.setWidthFull();
 
         DrawerToggle toggle = new DrawerToggle();
-        toggle.getStyle().set("margin-left", "auto");
 
         H1 title = new H1("TBL");
         title.getStyle().setColor("WHITE");
         RouterLink home = new RouterLink("", AdminView.class);
         home.add(title);
 
-        header.add(home, toggle);
+        header.add(toggle, home);
         addToNavbar(header);
 
     }
