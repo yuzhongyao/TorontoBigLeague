@@ -11,7 +11,7 @@ import java.util.List;
 public interface GamesRepository extends JpaRepository<Game, Integer> {
 
 
-    @Query(value = "SELECT \n" +
+    @Query(nativeQuery = true, value = "SELECT \n" +
             "    g.game_id,\n" +
             "    g.home_pts,\n" +
             "    g.away_pts,\n" +
@@ -29,7 +29,7 @@ public interface GamesRepository extends JpaRepository<Game, Integer> {
             "JOIN locations l ON g.location_id = l.location_id\n" +
             "JOIN seasons s ON s.season_id = g.season_id\n"+
             "WHERE s.season_id = (SELECT MAX(season_id) FROM seasons)\n" +
-            "ORDER BY g.game_date ASC;\n")
+            "ORDER BY g.game_date ASC\n")
     List<Game> getCurrentSeasonGames();
 
 
