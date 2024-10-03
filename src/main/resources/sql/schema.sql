@@ -1,5 +1,6 @@
 --Tables for Teams, games, ages, season
 
+DROP TABLE IF EXISTS sessions cascade;
 DROP TABLE IF EXISTS ages cascade;
 DROP TABLE IF EXISTS teams cascade;
 DROP TABLE IF EXISTS games;
@@ -19,7 +20,6 @@ CREATE TABLE teams(
     FOREIGN KEY(age_id) REFERENCES ages(age_id)
 );
 
-
 CREATE TABLE seasons(
     season_id SERIAL PRIMARY KEY,
     season_name VARCHAR(20)
@@ -30,6 +30,15 @@ CREATE TABLE locations(
     location_id SERIAL PRIMARY KEY,
     location_name VARCHAR(100),
     location_address VARCHAR(200)
+);
+
+CREATE TABLE sessions(
+    session_id SERIAL PRIMARY KEY,
+    age_id INT,
+    session_date DATE,
+    season_id INT,
+    FOREIGN KEY(age_id) REFERENCES ages(age_id),
+    FOREIGN KEY(season_id) REFERENCES seasons(season_id)
 );
 
 

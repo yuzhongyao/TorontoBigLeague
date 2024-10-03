@@ -10,6 +10,43 @@ INSERT INTO ages (age_group) VALUES
 INSERT INTO seasons (season_name) VALUES
 ('2024-2025'); --1
 
+INSERT INTO sessions(age_id, session_date, season_id) VALUES
+(1, '2024-11-23', 1), --grade 8
+(1, '2024-12-28', 1), --grade 8
+(1, '2025-01-25', 1), --grade 8
+(1, '2025-02-15', 1), --grade 8
+(1, '2025-03-01', 1), --grade 8
+(2, '2024-11-09', 1), --grade 9
+(2, '2024-11-30', 1), --grade 9
+(2, '2025-12-21', 1), --grade 9
+(2, '2025-01-11', 1), --grade 9
+(2, '2025-03-01', 1), --grade 9
+(3, '2024-11-09', 1), --grade 10
+(3, '2024-11-30', 1), --grade 10
+(3, '2025-12-21', 1), --grade 10
+(3, '2025-01-11', 1), --grade 10
+(3, '2025-03-01', 1), --grade 10
+(6, '2024-11-09', 1), --jr
+(6, '2024-11-30', 1), --jr
+(6, '2025-12-21', 1), --jr
+(6, '2025-01-11', 1), --jr
+(6, '2025-03-01', 1), --jr
+(4, '2024-11-02', 1), --grade 11
+(4, '2024-12-07', 1), --grade 11
+(4, '2025-01-04', 1), --grade 11
+(4, '2025-02-01', 1), --grade 11
+(4, '2025-03-22', 1), --grade 11
+(5, '2024-11-02', 1), --grade 12
+(5, '2024-12-07', 1), --grade 12
+(5, '2025-01-04', 1), --grade 12
+(5, '2025-02-01', 1), --grade 12
+(5, '2025-03-22', 1), --grade 12
+(7, '2024-11-02', 1), --sr
+(7, '2024-12-07', 1), --sr
+(7, '2025-01-04', 1), --sr
+(7, '2025-02-01', 1), --sr
+(7, '2025-03-22', 1); --sr
+
 INSERT INTO locations (location_name, location_address) VALUES
 ('Sir Wilfrid Laurier C.I.','145 Guildwood Pkwy, Scarborough, ON M1E 1P5'),                 --1
 ('Toronto Pan Am Sports Centre','875 Morningside Ave, Toronto, ON M1C 0C7'),                --2
