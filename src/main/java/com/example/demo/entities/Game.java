@@ -7,6 +7,7 @@ import java.sql.Time;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "games")
 public class Game {
 
     @Id
@@ -41,10 +42,22 @@ public class Game {
     private Location location_id;
 
     @ManyToOne
+    @JoinColumn(name = "session_id")
+    private Session session_id;
+
+    @ManyToOne
     @JoinColumn(name = "season_id")
     private Season season;
 
     public Game() {
+    }
+
+    public Session getSession_id() {
+        return session_id;
+    }
+
+    public void setSession_id(Session session_id) {
+        this.session_id = session_id;
     }
 
     public int getGame_id() {

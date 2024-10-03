@@ -3,6 +3,7 @@ package com.example.demo.views.Admin;
 import com.example.demo.services.*;
 import com.example.demo.util.UTILS;
 import com.example.demo.views.components.ScheduleGrid;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.security.AuthenticationContext;
@@ -38,7 +39,7 @@ public class AdminScheduleView extends VerticalLayout {
         this.locationsService = locationsService;
 
         ScheduleGrid schedule = new ScheduleGrid(authenticationContext, teamsService, agesService, gamesService, seasonsService, locationsService);
-
+        add(schedule, new Text("hello"));
     }
 
 

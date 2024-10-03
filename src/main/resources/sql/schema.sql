@@ -52,10 +52,12 @@ CREATE TABLE games(
     away_id INT,
     age_id INT,
     location_id INT,
+    session_id INT,
     season_id INT,
     FOREIGN KEY(home_id) REFERENCES teams(team_id),
     FOREIGN KEY(away_id) REFERENCES teams(team_id),
     FOREIGN KEY(age_id) REFERENCES ages(age_id),
     FOREIGN KEY(location_id) REFERENCES locations(location_id),
+    FOREIGN KEY(session_id) REFERENCES sessions(session_id),
     FOREIGN KEY(season_id) REFERENCES seasons(season_id)
 );

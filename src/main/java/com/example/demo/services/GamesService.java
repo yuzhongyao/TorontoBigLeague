@@ -20,4 +20,22 @@ public class GamesService {
         return gamesRepository.getCurrentSeasonGames();
     }
 
+//            ('Grade 8'),  --1
+//            ('Grade 9'),  --2
+//            ('Grade 10'), --3
+//            ('Grade 11'), --4
+//            ('Grade 12'), --5
+//            ('Jr'),       --6
+//            ('Sr');       --7
+    public List<Game> getMiddleSchoolGames() {
+        return gamesRepository.getGamesByAge(1);
+    }
+
+    public List<Game> getJrGames() {
+        return gamesRepository.getGamesByAge(6);
+    }
+
+    public List<Game> getSrGames(){
+        return gamesRepository.getGamesByAge(7);
+    }
 }

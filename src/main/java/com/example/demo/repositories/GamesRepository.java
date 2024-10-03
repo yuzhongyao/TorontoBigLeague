@@ -3,6 +3,7 @@ package com.example.demo.repositories;
 import com.example.demo.entities.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public interface GamesRepository extends JpaRepository<Game, Integer> {
             "ORDER BY g.game_date ASC\n")
     List<Game> getCurrentSeasonGames();
 
-
-
+    @Query(value = "select * from games where age_id = :ageId", nativeQuery = true)
+    List<Game> getGamesByAge(@Param("ageId") int ageId);
 
 }

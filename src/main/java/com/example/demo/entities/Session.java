@@ -26,7 +26,7 @@ public class Session {
     public Session() {
     }
 
-    
+
 
     public int getSession_id() {
         return session_id;
