@@ -4,6 +4,7 @@ import com.example.demo.entities.Game;
 import com.example.demo.entities.Location;
 import com.example.demo.entities.Team;
 import com.example.demo.services.*;
+import com.example.demo.util.UTILS;
 import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -12,6 +13,7 @@ import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.TabSheet;
@@ -143,13 +145,38 @@ public class ScheduleGrid extends VerticalLayout {
                 locationComboBox.setValue(game.getLocation_id());
                 locationComboBox.setItemLabelGenerator(Location::getLocation_name);
 
+                Button delete = new Button("Delete");
+                delete.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
+                delete.addClickListener(click -> {
+                    gamesService.deleteById(game.getGame_id());
+                    UTILS.showNotification(new Notification(),"SUCCESSFULLY DELETED", true);
+                    grid.getDataProvider().refreshAll();
+                    editor.close();
+                });
+
                 Button close = new Button("Cancel", (e) -> editor.close());
                 close.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
 
+                Button save = new Button("Save");
+                save.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_SUCCESS);
+                save.addClickListener(click -> {
+                    game.setGame_date(datePicker.getValue());
+                    game.setGame_time(timePicker.getValue());
+                    game.setAway_id(away.getValue());
+                    game.setHome_id(home.getValue());
+                    game.setAway_pts(Short.parseShort(awayPoints.getValue()));
+                    game.setHome_pts(Short.parseShort(homePoints.getValue()));
+                    game.setLocation_id(locationComboBox.getValue());
+                    gamesService.updateGame(game);
+                    grid.getDataProvider().refreshItem(game);
+                    editor.close();
+                    UTILS.showNotification(new Notification(),"SUCCESSFULLY SAVED", true);
+
+                });
 
                 editorLayout.add(datePicker,timePicker,away,awayPoints,home,homePoints,locationComboBox);
                 editor.add(editorLayout);
-                editor.getFooter().add(close);
+                editor.getFooter().add(delete,close,save);
                 editor.open();
 
             });

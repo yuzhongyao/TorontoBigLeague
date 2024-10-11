@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Age {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int age_id;
 
     @Column

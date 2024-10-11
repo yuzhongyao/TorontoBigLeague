@@ -12,7 +12,7 @@ import java.time.LocalTime;
 public class Game {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int game_id;
 
     @Column

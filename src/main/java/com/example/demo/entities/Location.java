@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Location {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int location_id;
 
     @Column

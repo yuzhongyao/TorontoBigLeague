@@ -47,4 +47,15 @@ public class GamesService {
     public List<Game> getPastSrGames(){return gamesRepository.getPastGamesByAge(6);}
 
 
+    public void deleteById(int gameId) {
+        gamesRepository.deleteById(gameId);
+    }
+
+    public void updateGame(Game game) {
+        gamesRepository.save(game);
+    }
+
+    public void save(Game game) {
+        gamesRepository.save(game);
+    }
 }

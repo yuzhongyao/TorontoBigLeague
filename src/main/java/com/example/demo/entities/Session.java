@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Session {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int session_id;
 
     @ManyToOne
@@ -59,4 +59,9 @@ public class Session {
     public void setSeason(Season season) {
         this.season = season;
     }
+
+    @Override
+    public String toString(){
+        return this.age.getAge_group() + " " +session_date.toString();
+    };
 }
