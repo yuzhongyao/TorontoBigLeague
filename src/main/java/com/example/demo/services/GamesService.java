@@ -28,14 +28,23 @@ public class GamesService {
 //            ('Jr'),       --6
 //            ('Sr');       --7
     public List<Game> getMiddleSchoolGames() {
-        return gamesRepository.getGamesByAge(1);
+        return gamesRepository.getUpcomingGamesByAge(1);
     }
+
+    public List<Game> getPastMiddleSchoolGames(){return gamesRepository.getPastGamesByAge(1);}
+
 
     public List<Game> getJrGames() {
-        return gamesRepository.getGamesByAge(6);
+        return gamesRepository.getUpcomingGamesByAge(6);
     }
+    public List<Game> getPastJrGames(){return gamesRepository.getPastGamesByAge(6);}
+
 
     public List<Game> getSrGames(){
-        return gamesRepository.getGamesByAge(7);
+        return gamesRepository.getUpcomingGamesByAge(7);
     }
+
+    public List<Game> getPastSrGames(){return gamesRepository.getPastGamesByAge(6);}
+
+
 }

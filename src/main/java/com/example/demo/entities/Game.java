@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "games")
@@ -23,7 +24,7 @@ public class Game {
     @Column
     private LocalDate game_date;
     @Column
-    private Time game_time;
+    private LocalTime game_time;
 
     @ManyToOne
     @JoinColumn(name = "home_id")
@@ -92,11 +93,11 @@ public class Game {
         this.game_date = game_date;
     }
 
-    public Time getGame_time() {
+    public LocalTime getGame_time() {
         return game_time;
     }
 
-    public void setGame_time(Time game_time) {
+    public void setGame_time(LocalTime game_time) {
         this.game_time = game_time;
     }
 

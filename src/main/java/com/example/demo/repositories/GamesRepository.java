@@ -33,7 +33,18 @@ public interface GamesRepository extends JpaRepository<Game, Integer> {
             "ORDER BY g.game_date ASC\n")
     List<Game> getCurrentSeasonGames();
 
-    @Query(value = "select * from games where age_id = :ageId", nativeQuery = true)
+    @Query(value = "select * from games where age_id = :ageId " +
+            "ORDER BY games.game_date", nativeQuery = true)
     List<Game> getGamesByAge(@Param("ageId") int ageId);
 
+
+    @Query(value = "select * from games where age_id = :ageId " +
+            "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
+            "ORDER BY games.game_date", nativeQuery = true)
+    List<Game> getPastGamesByAge(@Param("ageId") int ageId);
+
+    @Query(value = "select * from games where age_id = :ageId " +
+            "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
+            "ORDER BY games.game_date", nativeQuery = true)
+    List<Game> getUpcomingGamesByAge(@Param("ageId") int ageId);
 }
