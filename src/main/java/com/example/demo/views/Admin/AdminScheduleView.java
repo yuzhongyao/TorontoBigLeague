@@ -86,6 +86,8 @@ public class AdminScheduleView extends VerticalLayout {
                 List<Team> teams = teamsService.findAllByAgeGroup(age.getValue());
                 away.setItems(teams);
                 home.setItems(teams);
+
+                sessionComboBox.setItems(sessionsService.getSessionsByAge(age.getValue()));
             });
 
             DatePicker date = new DatePicker("Date");
