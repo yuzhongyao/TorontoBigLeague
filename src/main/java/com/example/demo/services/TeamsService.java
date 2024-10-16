@@ -100,4 +100,7 @@ public class TeamsService {
         return result;
     }
 
+    public void save(Team team) {
+        teamsRepository.save(team);
+    }
 }
