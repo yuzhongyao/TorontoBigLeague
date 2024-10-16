@@ -42,7 +42,8 @@ public class AdminScheduleView extends VerticalLayout {
     List<LocalDate> sessions = new ArrayList<>();
 
 
-    public AdminScheduleView(AuthenticationContext authenticationContext, TeamsService teamsService, AgesService agesService, GamesService gamesService, SeasonsService seasonsService, SessionsService sessionsService, LocationsService locationsService){
+    public AdminScheduleView(AuthenticationContext authenticationContext, TeamsService teamsService, AgesService agesService, GamesService gamesService,
+                             SeasonsService seasonsService, SessionsService sessionsService, LocationsService locationsService){
 
         this.authenticationContext = authenticationContext;
         this.teamsService = teamsService;
