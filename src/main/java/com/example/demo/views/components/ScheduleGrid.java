@@ -20,6 +20,7 @@ import com.vaadin.flow.component.tabs.TabSheet;
 import com.vaadin.flow.component.tabs.TabSheetVariant;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.timepicker.TimePicker;
+import com.vaadin.flow.data.renderer.LitRenderer;
 import com.vaadin.flow.spring.security.AuthenticationContext;
 
 import java.time.Duration;
@@ -97,14 +98,58 @@ public class ScheduleGrid extends VerticalLayout {
 
 
     private void configureGrid(Grid<Game> grid){
-        grid.addColumn(game -> game.getGame_date()).setHeader("Date");
+        grid.addColumn(game -> game.getGame_date()).setHeader("Date").setWidth("50px").setFlexGrow(0);
 
-        grid.addColumn(game -> game.getGame_time().format(DateTimeFormatter.ofPattern("HH:mm"))).setHeader("Time");
-        grid.addColumn(game -> game.getHome_id().getTeam_name()).setHeader("Home");
-        grid.addColumn(Game::getHome_pts).setHeader("Home Pts");
-        grid.addColumn(game -> game.getAway_id().getTeam_name()).setHeader("Away");
-        grid.addColumn(Game::getAway_pts).setHeader("Away Pts");
-        grid.addColumn(game -> game.getLocation_id().getLocation_name() + game.getLocation_id().getLocation_address()).setHeader("Location");
+        grid.addColumn(game -> game.getGame_time().format(DateTimeFormatter.ofPattern("HH:mm"))).setHeader("Time").setAutoWidth(true).setFlexGrow(0);
+//        grid.addColumn(game -> game.getHome_id().getTeam_name()).setHeader("H");
+        grid.addColumn(
+                        LitRenderer.<Game>of(
+                                        "<span style='${item.home_pts > item.away_pts ? \"font-weight: bold;\" : \"\"}'>${item.home_name}</span>"
+                                )
+                                .withProperty("home_pts", Game::getHome_pts)
+                                .withProperty("away_pts", Game::getAway_pts)
+                                .withProperty("home_name", game -> game.getHome_id().getTeam_name())
+                )
+                .setHeader("H");
+//        grid.addColumn(Game::getHome_pts).setHeader("H Pts").setAutoWidth(true).setFlexGrow(0).setPartNameGenerator(game -> {
+//            if(game.getHome_pts() > game.getAway_pts()){
+//                return "font-weight-bold";
+//            }
+//            else {
+//                return "";
+//            }
+//        });
+        grid.addColumn(
+                        LitRenderer.<Game>of(
+                                        "<span style='${item.home_pts > item.away_pts ? \"font-weight: bold;\" : \"\"}'>${item.home_pts}</span>"
+                                )
+                                .withProperty("home_pts", Game::getHome_pts)
+                                .withProperty("away_pts", Game::getAway_pts)
+                )
+                .setHeader("H Pts")
+                .setAutoWidth(true)
+                .setFlexGrow(0);
+//        grid.addColumn(game -> game.getAway_id().getTeam_name()).setHeader("A");
+        grid.addColumn(
+                        LitRenderer.<Game>of(
+                                        "<span style='${item.away_pts > item.home_pts ? \"font-weight: bold;\" : \"\"}'>${item.away_name}</span>"
+                                )
+                                .withProperty("home_pts", Game::getHome_pts)
+                                .withProperty("away_pts", Game::getAway_pts)
+                                .withProperty("away_name", game -> game.getAway_id().getTeam_name())
+                )
+                .setHeader("A");
+        grid.addColumn(
+                        LitRenderer.<Game>of(
+                                        "<span style='${item.away_pts > item.home_pts ? \"font-weight: bold;\" : \"\"}'>${item.away_pts}</span>"
+                                )
+                                .withProperty("home_pts", Game::getHome_pts)
+                                .withProperty("away_pts", Game::getAway_pts)
+                )
+                .setHeader("A Pts")
+                .setAutoWidth(true)
+                .setFlexGrow(0);
+        grid.addColumn(game -> game.getLocation_id().getLocation_name() + " " + game.getLocation_id().getLocation_address()).setHeader("Location");
         grid.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
 

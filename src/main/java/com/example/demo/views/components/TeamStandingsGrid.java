@@ -93,15 +93,17 @@ public class TeamStandingsGrid extends VerticalLayout {
     }
 
     public void ConfigureGrid(Grid<TeamStanding> grid){
-        grid.addColumn(TeamStanding::getTeamName).setHeader("Team");
-        grid.addColumn(TeamStanding::getGamesPlayed).setHeader("Games Played");
-        grid.addColumn(TeamStanding::getWins).setHeader("Wins");
-        grid.addColumn(TeamStanding::getLosses).setHeader("Losses");
-        grid.addColumn(TeamStanding::getPointsFor).setHeader("PF");
-        grid.addColumn(TeamStanding::getPointsAgainst).setHeader("PA");
-        grid.addColumn(TeamStanding::getWinPercentage).setHeader("Win PCT");
+        grid.addColumn(TeamStanding::getTeamName).setHeader("Team").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getGamesPlayed).setHeader("GP").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getWins).setHeader("W").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getLosses).setHeader("L").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getPointsFor).setHeader("PF").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getPointsAgainst).setHeader("PA").setAutoWidth(true).setFlexGrow(1);
+        grid.addColumn(TeamStanding::getWinPercentage).setHeader("WPCT").setAutoWidth(true).setFlexGrow(1);
         grid.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
+        grid.addThemeVariants(GridVariant.LUMO_COMPACT);
+
 
     }
 
