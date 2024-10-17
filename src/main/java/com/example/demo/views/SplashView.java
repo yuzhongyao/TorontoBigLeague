@@ -7,9 +7,11 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 @PageTitle("Splash | Toronto Big League")
 @Route("")
+@AnonymousAllowed
 public class SplashView extends Div  {
 
     public SplashView(){

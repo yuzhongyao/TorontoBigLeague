@@ -33,6 +33,7 @@ public class MainLayout extends AppLayout {
         RouterLink home = new RouterLink("", MainView.class);
         RouterLink aboutUs = new RouterLink("About Us", AboutUsView.class);
         RouterLink schedule = new RouterLink("Schedule", ScheduleView.class);
+        RouterLink standings = new RouterLink("Standings", Standings.class);
         RouterLink contactUs = new RouterLink("Contact Us", ContactUsView.class);
         RouterLink registration = new RouterLink("Register", RegistrationView.class);
 
@@ -40,6 +41,7 @@ public class MainLayout extends AppLayout {
         home.add(logoImage);
         aboutUs.addClassName("navbar-link");
         schedule.addClassName("navbar-link");
+        standings.addClassName("navbar-link");
         contactUs.addClassName("navbar-link");
         registration.addClassName("navbar-link");
 
@@ -48,6 +50,7 @@ public class MainLayout extends AppLayout {
         HorizontalLayout menu = new HorizontalLayout(
                 aboutUs,
                 schedule,
+                standings,
                 contactUs,
                 registration
         );
@@ -83,12 +86,14 @@ public class MainLayout extends AppLayout {
 
         RouterLink aboutUs3 = new RouterLink("About Us", AboutUsView.class);
         RouterLink schedule3 = new RouterLink("Schedule", ScheduleView.class);
+        RouterLink standing3 = new RouterLink("Schedule", ScheduleView.class);
         RouterLink contactUs3 = new RouterLink("Contact Us", ContactUsView.class);
         RouterLink registration3 = new RouterLink("Register", RegistrationView.class);
 
         HorizontalLayout menu3 = new HorizontalLayout(
                 aboutUs3,
                 schedule3,
+                standing3,
                 contactUs3,
                 registration3
         );
@@ -96,6 +101,7 @@ public class MainLayout extends AppLayout {
         //home3.addClassName("navbar-link");
         aboutUs3.addClassName("navbar-link");
         schedule3.addClassName("navbar-link");
+        standing3.addClassName("navbar-link");
         contactUs3.addClassName("navbar-link");
         registration3.addClassName("navbar-link");
 //        menu3.setAlignSelf(FlexComponent.Alignment.END);
@@ -152,6 +158,11 @@ public class MainLayout extends AppLayout {
                 getUI().get().navigate("/schedule");
                 contextMenu.close();
 
+            });
+            contextMenu.addItem("Standings", e -> {
+                // Handle item 2 click
+                getUI().get().navigate("/standings");
+                contextMenu.close();
             });
             contextMenu.addItem("Contact Us", e -> {
                 // Handle item 3 click
