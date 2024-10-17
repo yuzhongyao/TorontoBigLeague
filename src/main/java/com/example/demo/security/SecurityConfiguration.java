@@ -3,6 +3,7 @@ package com.example.demo.security;
 
 import com.example.demo.views.LoginView;
 import com.vaadin.flow.spring.security.VaadinWebSecurity;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,8 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @EnableWebSecurity
 @Configuration
@@ -35,15 +38,32 @@ public class SecurityConfiguration extends VaadinWebSecurity {
         super.configure(http);
         setLoginView(http, LoginView.class);
     }
+//    @Bean
+//    public DataSource dataSource(){
+//        DataSourceBuilder dataSourceBuilder =DataSourceBuilder.create();
+//        dataSourceBuilder.driverClassName("org.postgresql.Driver");
+//        dataSourceBuilder.url(System.getenv("DATASOURCE_URL"));
+//        dataSourceBuilder.username(System.getenv("DATASOURCE_USERNAME"));
+//        dataSourceBuilder.password(System.getenv("DATASOURCE_PASSWORD"));
+//        return dataSourceBuilder.build();
+//    }
+
     @Bean
-    public DataSource dataSource(){
-        DataSourceBuilder dataSourceBuilder =DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.postgresql.Driver");
-        dataSourceBuilder.url(System.getenv("DATASOURCE_URL"));
-        dataSourceBuilder.username(System.getenv("DATASOURCE_USERNAME"));
-        dataSourceBuilder.password(System.getenv("DATASOURCE_PASSWORD"));
-        return dataSourceBuilder.build();
+    public BasicDataSource dataSource() throws URISyntaxException {
+        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
+
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl(dbUrl);
+        basicDataSource.setUsername(username);
+        basicDataSource.setPassword(password);
+
+        return basicDataSource;
     }
+
 
     @Bean
     public UserDetailsService users(){
