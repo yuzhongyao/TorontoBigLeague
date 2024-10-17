@@ -21,4 +21,8 @@ public class AgesService {
     public List<Age> getAll() {
         return agesRepository.findAll();
     }
+
+    public void save(Age age) {
+        agesRepository.save(age);
+    }
 }

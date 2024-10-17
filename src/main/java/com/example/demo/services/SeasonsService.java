@@ -19,4 +19,8 @@ public class SeasonsService {
     public Season getCurrent() {
         return seasonsRepository.getCurrent();
     }
+
+    public void save(Season season) {
+        seasonsRepository.save(season);
+    }
 }

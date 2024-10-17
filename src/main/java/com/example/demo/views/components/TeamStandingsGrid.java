@@ -85,8 +85,8 @@ public class TeamStandingsGrid extends VerticalLayout {
         prepAccordian.add("JR Prep", jrPrepGrid);
         prepAccordian.add("SR Prep",srPrepGrid);
 
-        tabSheet.add(rep,repAccordian);
         tabSheet.add(prep, prepAccordian);
+        tabSheet.add(rep,repAccordian);
         tabSheet.addThemeVariants(TabSheetVariant.LUMO_TABS_CENTERED);
         tabSheet.setWidthFull();
         add(tabSheet);

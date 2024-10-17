@@ -28,4 +28,8 @@ public class SessionsService {
     public List<Session> getSessionsByAge(Age age) {
         return sessionsRepository.getSessionsByAge(age.getAge_id());
     }
+
+    public void save(Session session) {
+        sessionsRepository.save(session);
+    }
 }
