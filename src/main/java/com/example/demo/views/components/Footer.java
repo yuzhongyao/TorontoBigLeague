@@ -49,11 +49,17 @@ public class Footer extends Div {
         Anchor youtubeLink = new Anchor("https://www.youtube.com/@torontobigleague");
         youtubeLink.add(youtube);
         //Instagram
-        Image instagram = new Image();
-        instagram.setSrc("images/instagram.png");
-        instagram.setWidth("45px");
+        Icon instagram = new Icon(VaadinIcon.CAMERA);
+        instagram.setSize("40px");
+        instagram.setColor("white");
         Anchor instagramLink = new Anchor("https://www.instagram.com/torontobigleague");
         instagramLink.add(instagram);
+//        instagramLink.add(instagram);
+//        Image instagram = new Image();
+//        instagram.setSrc("images/instagram.png");
+//        instagram.setWidth("45px");
+//        Anchor instagramLink = new Anchor("https://www.instagram.com/torontobigleague");
+//        instagramLink.add(instagram);
         //Tiktok
         Icon tiktok = MyIconsSvg.TIKTOK.create();
         tiktok.setSize("40px");
@@ -61,11 +67,16 @@ public class Footer extends Div {
         Anchor tiktokLink = new Anchor("https://www.tiktok.com/@torontobigleague");
         tiktokLink.add(tiktok);
         //Mail
-        Image mail = new Image();
-        mail.setSrc("images/mail.png");
-        mail.setWidth("45px");
+        Icon mail = new Icon(VaadinIcon.ENVELOPE_O);
+        mail.setSize("40px");
+        mail.setColor("white");
         Anchor mailLink = new Anchor("mailto:torontobigleague@gmail.com");
         mailLink.add(mail);
+//        Image mail = new Image();
+//        mail.setSrc("images/mail.png");
+//        mail.setWidth("45px");
+//        Anchor mailLink = new Anchor("mailto:torontobigleague@gmail.com");
+//        mailLink.add(mail);
         socialContainer.add(facebookLink,youtubeLink, instagramLink,tiktokLink,mailLink);
 
         //copyright
