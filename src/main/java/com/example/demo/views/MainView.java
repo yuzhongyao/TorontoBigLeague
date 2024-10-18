@@ -42,7 +42,7 @@ public class MainView extends VerticalLayout {
         imageContainer.addClassName("image-container");
 
         Image backgroundImage = new Image();
-        backgroundImage.setSrc("images/poster.jpg");
+        backgroundImage.setSrc("https://dpaacptq7x5t0.cloudfront.net/poster.jpg");
         backgroundImage.addClassName("background-image");
         imageContainer.add(backgroundImage);
 
@@ -51,43 +51,7 @@ public class MainView extends VerticalLayout {
         main.addClassName("content");
         main.setWidthFull();
 
-        //Middle school content
-        Div middleDiv = new Div();
-        H2 middleTitle = new H2();
-        middleTitle.addClassName("center");
-        middleTitle.setText("MIDDLE SCHOOL MADNESS");
-        middleTitle.addClassName("white");
-        middleTitle.addClassName("poster-title");
-        middleDiv.add(middleTitle);
-        //middle school poster div
-        Div middlePosterDiv = new Div();
-        middlePosterDiv.addClassName("poster-container");
-        //Middle school poster
-        Image middlePoster = new Image();
-        middlePoster.setSrc("images/middle.png");
-        middlePoster.addClassName("poster");
 
-
-        //middle school list of league features
-        UnorderedList middleList = new UnorderedList();
-        ListItem item1 = new ListItem("Each team has 14 Games Guaranteed");
-        ListItem item2 = new ListItem("$2,600 per team with a multi-team discount of $2,300 per team if you are able to bring 3 or more teams!");
-        ListItem item3 = new ListItem("Games are live streamed on BallerTV");
-        ListItem item4 = new ListItem("Games are uploaded to YouTube");
-        ListItem item5 = new ListItem("Individual player stat keeping using BallerTV software");
-        ListItem item6 = new ListItem("All Stars and MVPs will receive an Adidas prizepack");
-        ListItem item7 = new ListItem("WINNING TEAM FROM EACH GRADE EARNS FREE ENTRY INTO ANY ADIDAS JR3SSB CIRCUIT SESSION!");
-        middleList.add(item1);
-        middleList.add(item2);
-        middleList.add(item3);
-        middleList.add(item4);
-        middleList.add(item5);
-        middleList.add(item6);
-        middleList.add(item7);
-
-        middlePosterDiv.add(middlePoster);
-        middlePosterDiv.add(middleList);
-        middleDiv.add(middlePosterDiv);
 
         //high school content
         Div highDiv = new Div();
@@ -104,11 +68,11 @@ public class MainView extends VerticalLayout {
 //        highPosterDiv.addClassName("poster-container2");
         //high school poster
         Image prep1 = new Image();
-        prep1.setSrc("images/bigprep1.jpg");
+        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigprep1.jpg");
         prep1.addClassName("poster");
 
         Image prep2 = new Image();
-        prep2.setSrc("images/bigprep2.jpg");
+        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigprep2.jpg");
         prep2.addClassName("poster");
 
 

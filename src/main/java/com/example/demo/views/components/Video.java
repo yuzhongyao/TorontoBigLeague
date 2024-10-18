@@ -21,7 +21,7 @@ public class Video extends HtmlContainer {
         getElement().setAttribute("controls", false);
         getElement().setAttribute("playsinline", true);
         getElement().setAttribute("preload", "auto");
-        getElement().setAttribute("poster", "images/poster.jpg");
+        getElement().setAttribute("poster", "https://dpaacptq7x5t0.cloudfront.net/poster.jpg");
         add(new Source());
     }
 
@@ -33,7 +33,7 @@ public class Video extends HtmlContainer {
 //        getElement().setAttribute("type", "video/mp4");
         getElement().setAttribute("controls", false);
         getElement().setAttribute("playsinline", true);
-        getElement().setAttribute("poster", "images/poster.jpg");
+        getElement().setAttribute("poster", "https://dpaacptq7x5t0.cloudfront.net/poster.jpg");
         getElement().setAttribute("preload", "auto");
         add(new Source(src));
 

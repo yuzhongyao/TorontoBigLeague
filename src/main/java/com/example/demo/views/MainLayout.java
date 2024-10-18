@@ -21,7 +21,7 @@ public class MainLayout extends AppLayout {
 
         //Logo image
         Image logoImage = new Image();
-        logoImage.setSrc("images/bigleaguelogoWhite.png");
+        logoImage.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigleaguelogoWhite.png");
         logoImage.setWidth("125px");
         logoImage.addClassName("logo-image");
 
@@ -74,7 +74,7 @@ public class MainLayout extends AppLayout {
         H1 logo3 = new H1("");
         //Logo image
         Image logoImage3 = new Image();
-        logoImage3.setSrc("images/bigleaguelogoWhite.png");
+        logoImage3.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigleaguelogoWhite.png");
         logoImage3.setWidth("125px");
 
 
@@ -124,7 +124,7 @@ public class MainLayout extends AppLayout {
         H1 logo2 = new H1("");
         //Logo image
         Image logoImage2 = new Image();
-        logoImage2.setSrc("images/bigleaguelogoWhite.png");
+        logoImage2.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigleaguelogoWhite.png");
         logoImage2.setWidth("125px");
 
 

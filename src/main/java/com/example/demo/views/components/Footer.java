@@ -29,7 +29,7 @@ public class Footer extends Div {
         logoContainer.addClassName("center");
 
         Image logoImage = new Image();
-        logoImage.setSrc("static/images/bigleaguelogoblack.png");
+        logoImage.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigleaguelogoblack.png");
         logoImage.setWidth("150px");
 
         //social media
@@ -55,7 +55,7 @@ public class Footer extends Div {
 //        Anchor instagramLink = new Anchor("https://www.instagram.com/torontobigleague");
 //        instagramLink.add(instagram);
         Image instagram = new Image();
-        instagram.setSrc("static/images/instagram.png");
+        instagram.setSrc("https://dpaacptq7x5t0.cloudfront.net/instagram.png");
         instagram.setWidth("45px");
         Anchor instagramLink = new Anchor("https://www.instagram.com/torontobigleague");
         instagramLink.add(instagram);
@@ -72,7 +72,7 @@ public class Footer extends Div {
 //        Anchor mailLink = new Anchor("mailto:torontobigleague@gmail.com");
 //        mailLink.add(mail);
         Image mail = new Image();
-        mail.setSrc("static/images/mail.png");
+        mail.setSrc("https://dpaacptq7x5t0.cloudfront.net/mail.png");
         mail.setWidth("45px");
         Anchor mailLink = new Anchor("mailto:torontobigleague@gmail.com");
         mailLink.add(mail);
