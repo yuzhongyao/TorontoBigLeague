@@ -8,6 +8,8 @@ INSERT INTO ages (age_group) VALUES
 ('Sr Prep'),       --7
 ('Jr Rep'),        --8
 ('Sr Rep');        --9
+-- Sr 10
+-- Jr 11
 
 INSERT INTO seasons (season_name) VALUES
 ('2024-2025'); --1

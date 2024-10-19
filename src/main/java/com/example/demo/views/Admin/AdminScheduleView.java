@@ -21,10 +21,7 @@ import jakarta.annotation.security.RolesAllowed;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Route(value = "/admin/schedule", layout = AdminLayout.class)
 @RolesAllowed("ADMIN")
@@ -84,11 +81,33 @@ public class AdminScheduleView extends VerticalLayout {
 
 
             age.addValueChangeListener(l -> {
-                List<Team> teams = teamsService.findAllByAgeGroup(age.getValue());
-                away.setItems(teams);
-                home.setItems(teams);
+                if (Objects.equals(l.getValue().getAge_group(), "Sr")   ){
+                    List<Team> teams = teamsService.findAllSenior();
+                    away.setItems(teams);
+                    home.setItems(teams);
+                    away.setItemLabelGenerator(Team::getTeamNameAndAge);
+                    home.setItemLabelGenerator(Team::getTeamNameAndAge);
+                    sessionComboBox.setItems(sessionsService.getSessionsByAge(l.getValue()));
 
-                sessionComboBox.setItems(sessionsService.getSessionsByAge(age.getValue()));
+
+                }
+                else if( Objects.equals(l.getValue().getAge_group(), "Jr")){
+                    List<Team> teams = teamsService.findAllJunior();
+                    away.setItems(teams);
+                    home.setItems(teams);
+                    away.setItemLabelGenerator(Team::getTeamNameAndAge);
+                    home.setItemLabelGenerator(Team::getTeamNameAndAge);
+                    sessionComboBox.setItems(sessionsService.getSessionsByAge(l.getValue()));
+
+                }
+
+                else {
+                    List<Team> teams = teamsService.findAllByAgeGroup(age.getValue());
+                    away.setItems(teams);
+                    home.setItems(teams);
+
+                    sessionComboBox.setItems(sessionsService.getSessionsByAge(age.getValue()));
+                }
             });
 
             DatePicker date = new DatePicker("Date");

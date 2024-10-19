@@ -30,6 +30,14 @@ public class TeamsService {
         return teamsRepository.findAllByAgeGroup(age.getAge_id());
     }
 
+    public List<Team> findAllSenior(){
+        return teamsRepository.findAllSenior();
+    }
+
+    public List<Team> findAllJunior(){
+        return teamsRepository.findAllJunior();
+    }
+
     public List<TeamStanding> findTeamStandings(int i){
 //        ('Grade 8'),  --1
 //        ('Grade 9'),  --2

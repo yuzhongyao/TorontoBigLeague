@@ -58,6 +58,8 @@ public class TeamStandingsGrid extends VerticalLayout {
 //        ('Sr Prep'),       --7
 //        ('Jr Rep'),        --8
 //        ('Sr Rep');        --9
+//        Sr                 --10
+//        Jr              --11
         List<TeamStanding> grade8Standings = teamsService.findTeamStandings(1);
         grade8.setItems(grade8Standings);
         List<TeamStanding> jrRepStandings = teamsService.findTeamStandings(8);

@@ -43,4 +43,8 @@ public class Team {
     public void setAge(Age age) {
         this.age = age;
     }
+
+    public String getTeamNameAndAge(){
+        return team_name + " " + getAge().getAge_group();
+    }
 }

@@ -17,6 +17,14 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
             "teams.age_id = :ageId ")
     List<Team> findAllByAgeGroup(@Param("ageId") int ageId);
 
+    @Query(nativeQuery = true, value = "SELECT * FROM teams WHERE " +
+            "teams.age_id = 7 OR teams.age_id = 9")
+    List<Team> findAllSenior();
+
+    @Query(nativeQuery = true, value = "SELECT * FROM teams WHERE " +
+            "teams.age_id = 6 OR teams.age_id = 8")
+    List<Team> findAllJunior();
+
     @Query(nativeQuery = true, value = "SELECT t.team_name, COUNT(g.game_id) AS games_played, " +
             "SUM(CASE WHEN t.team_id = g.home_id AND g.home_pts > g.away_pts THEN 1 " +
             "WHEN t.team_id = g.away_id AND g.away_pts > g.home_pts THEN 1 ELSE 0 END) AS wins, " +
