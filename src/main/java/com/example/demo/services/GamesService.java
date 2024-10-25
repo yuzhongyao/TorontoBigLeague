@@ -35,16 +35,16 @@ public class GamesService {
 
 
     public List<Game> getJrGames() {
-        return gamesRepository.getUpcomingGamesByAge(6);
+        return gamesRepository.getJrUpcomingGames();
     }
-    public List<Game> getPastJrGames(){return gamesRepository.getPastGamesByAge(6);}
+    public List<Game> getPastJrGames(){return gamesRepository.getPastJrGames();}
 
 
     public List<Game> getSrGames(){
-        return gamesRepository.getUpcomingGamesByAge(7);
+        return gamesRepository.getSrUpcomingGames();
     }
 
-    public List<Game> getPastSrGames(){return gamesRepository.getPastGamesByAge(6);}
+    public List<Game> getPastSrGames(){return gamesRepository.getPastSrGames();}
 
 
     public void deleteById(int gameId) {
