@@ -33,39 +33,36 @@ public interface GamesRepository extends JpaRepository<Game, Integer> {
             "ORDER BY g.game_date ASC\n")
     List<Game> getCurrentSeasonGames();
 
-    @Query(value = "select * from games where age_id = :ageId " +
-            "ORDER BY games.game_date", nativeQuery = true)
-    List<Game> getGamesByAge(@Param("ageId") int ageId);
 
-
-    @Query(value = "select * from games where age_id = :ageId " +
+    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 10) " +
             "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
-    List<Game> getPastGamesByAge(@Param("ageId") int ageId);
-
-    @Query(value = "select * from games where age_id = 7 or age_id = 9 or age_id = 10 " +
-            "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getPastSrGames();
 
-    @Query(value = "select * from games where age_id = 6 or age_id = 8 or age_id = 11 " +
+    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 11) " +
             "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getPastJrGames();
 
-    @Query(value = "select * from games where age_id = :ageId " +
-            "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
-    List<Game> getUpcomingGamesByAge(@Param("ageId") int ageId);
 
-    @Query(value = "select * from games where age_id = 7 or age_id = 9 or age_id = 10 " +
+
+    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 10) " +
             "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getSrUpcomingGames();
 
-    @Query(value = "select * from games where age_id = 6 or age_id = 8 or age_id = 11 " +
+    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 11) " +
             "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
-            "ORDER BY games.game_date", nativeQuery = true)
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getJrUpcomingGames();
+
+    @Query(value = "select * from games where age_id = :ageId " +
+            "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
+    List<Game> getPastGamesByAge(@Param("ageId") int ageId);
+    @Query(value = "select * from games where age_id = :ageId " +
+            "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
+            "ORDER BY games.game_date, games.game_time", nativeQuery = true)
+    List<Game> getUpcomingGamesByAge(@Param("ageId") int ageId);
 
 }
