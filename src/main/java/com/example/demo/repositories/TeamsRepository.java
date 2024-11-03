@@ -37,7 +37,7 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
             "JOIN ages a ON t.age_id = a.age_id " +
             "WHERE a.age_group = :ageGroup " +
             "GROUP BY t.team_name " +
-            "ORDER BY wins DESC, points_for DESC, points_against ASC")
+            "ORDER BY wins DESC, points_for DESC, points_against ASC, games_played DESC")
     List<Tuple> findTeamStandingsByAgeGroup(@Param("ageGroup") String ageGroup);
 
 
