@@ -122,7 +122,8 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
         "    SUM(CASE \n" +
         "            WHEN t.team_id = g.home_id THEN g.away_pts \n" +
         "            ELSE g.home_pts \n" +
-        "        END) AS points_against\n" +
+        "        END) AS points_against, \n" +
+        "    t.team_id" +
         "FROM \n" +
         "    teams t\n" +
         "JOIN \n" +

@@ -38,6 +38,7 @@ public class TeamsService {
         return teamsRepository.findAllJunior();
     }
 
+
     public List<TeamStanding> findTeamStandings(int i){
 //        ('Grade 8'),  --1
 //        ('Grade 9'),  --2
@@ -93,8 +94,10 @@ public class TeamsService {
                  if(tuple.get(5) != null){
                      pa = tuple.get(5, Long.class);
                  }
+                 int id = tuple.get(6, Integer.class);
                  TeamStanding teamStanding = new TeamStanding(
                 teamName, // team_name
+                id,
                 gamesPlayed, // games_played
                 wins,
                 losses, // losses

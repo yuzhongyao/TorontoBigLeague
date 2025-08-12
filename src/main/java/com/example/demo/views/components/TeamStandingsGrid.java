@@ -1,8 +1,10 @@
 package com.example.demo.views.components;
 
+import com.example.demo.entities.Team;
 import com.example.demo.entities.TeamStanding;
 import com.example.demo.services.*;
 import com.vaadin.flow.component.accordion.Accordion;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -105,6 +107,18 @@ public class TeamStandingsGrid extends VerticalLayout {
         grid.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
         grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
         grid.addThemeVariants(GridVariant.LUMO_COMPACT);
+
+        if(authenticationContext.isAuthenticated()){
+            grid.addItemClickListener(item ->{
+                TeamStanding teamStanding = item.getItem();
+
+                Team team = teamsService.findTeamById(teamStanding.getId()).get();
+
+                Dialog editor = new Dialog();
+                editor.setHeaderTitle("Edit Team Details");
+
+            });
+        }
 
 
     }

@@ -18,6 +18,7 @@ import jakarta.persistence.SqlResultSetMapping;
 )
 public class TeamStanding {
     private String teamName;
+    private int id;
     private long gamesPlayed;
     private long wins;
     private long losses;
@@ -25,8 +26,9 @@ public class TeamStanding {
     private long pointsAgainst;
 
 
-    public TeamStanding(String teamName, long gamesPlayed, long wins, long losses, long pointsFor, long pointsAgainst) {
+    public TeamStanding(String teamName, int id, long gamesPlayed, long wins, long losses, long pointsFor, long pointsAgainst) {
         this.teamName = teamName;
+        this.id = id;
         this.gamesPlayed = gamesPlayed;
         this.wins = wins;
         this.losses = losses;
@@ -35,6 +37,15 @@ public class TeamStanding {
     }
 
     // Getters and setters
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public double getWinPercentage(){
 

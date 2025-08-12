@@ -68,21 +68,21 @@ public class MainView extends VerticalLayout {
 //        highPosterDiv.addClassName("poster-container2");
         //high school poster
         Image prep1 = new Image();
-        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigprep1.jpg");
+        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep1.jpg");
         prep1.addClassName("poster");
 
         Image prep2 = new Image();
-        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/bigprep2.jpg");
+        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep2.jpg");
         prep2.addClassName("poster");
 
 
         //high school list of league features
         UnorderedList highList = new UnorderedList();
-        ListItem item8 = new ListItem("$750 per session");
+        ListItem item8 = new ListItem("$780 per session");
         ListItem item9 = new ListItem("4 games per session");
-        ListItem item10 = new ListItem("Teams MUST commit to at least 2 sessions");
-        ListItem item11 = new ListItem("GUARANTEED PRICE FREEZE for fully registered teams that return every year");
-        ListItem item12 = new ListItem("Early registrants before July 5 are able to receive Adidas Team Pack");
+        ListItem item10 = new ListItem("Teams MUST commit to at least 2 sessions to qualify for Championship");
+        //ListItem item11 = new ListItem("GUARANTEED PRICE FREEZE for fully registered teams that return every year");
+        ListItem item12 = new ListItem("Early registrants before September 30 are able to receive Adidas Team Pack* (contact for info)");
         ListItem item13 = new ListItem("Full games recorded and uploaded to YouTube");
         ListItem item14 = new ListItem("Team highlight videos on social media");
 
@@ -92,7 +92,7 @@ public class MainView extends VerticalLayout {
         highList.add(item8);
         highList.add(item9);
         highList.add(item10);
-        highList.add(item11);
+        //highList.add(item11);
         highList.add(item12);
         highList.add(item13);
         highList.add(item14);
