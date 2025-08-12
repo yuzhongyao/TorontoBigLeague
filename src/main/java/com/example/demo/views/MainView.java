@@ -68,11 +68,11 @@ public class MainView extends VerticalLayout {
 //        highPosterDiv.addClassName("poster-container2");
         //high school poster
         Image prep1 = new Image();
-        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep1.jpg");
+        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep1.png");
         prep1.addClassName("poster");
 
         Image prep2 = new Image();
-        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep2.jpg");
+        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep2.png");
         prep2.addClassName("poster");
 
 
