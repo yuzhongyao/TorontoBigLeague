@@ -45,7 +45,8 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
             "    SUM(CASE \n" +
             "        WHEN t.team_id = g.home_id THEN COALESCE(g.away_pts, 0) \n" +
             "        ELSE COALESCE(g.home_pts, 0) \n" +
-            "    END) AS points_against \n" +
+            "    END) AS points_against, " +
+            "    t.team_id \n" +
             "FROM \n" +
             "    teams t \n" +
             "LEFT JOIN \n" +
@@ -55,7 +56,7 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
             "WHERE \n" +
             "    a.age_group = :ageGroup\n" +
             "GROUP BY \n" +
-            "    t.team_name \n" +
+            "    t.team_name, t.team_id \n" +
             "ORDER BY \n" +
             "    CASE WHEN COUNT(g.game_id) > 0 THEN 0 ELSE 1 END,  -- Puts teams with games first\n" +
             "    wins DESC, \n" +
