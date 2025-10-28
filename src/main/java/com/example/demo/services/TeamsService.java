@@ -53,7 +53,7 @@ public class TeamsService {
 
 
         List<TeamStanding> result = new ArrayList<>();
-        List<Tuple> tuples;
+        List<Object[]> tuples;
 
              tuples =   switch (i) {
             case 1 -> teamsRepository.findTeamStandingsByAgeGroup("Grade 8");
@@ -67,34 +67,34 @@ public class TeamsService {
              if(tuples.isEmpty()){
                  return result;
              }
-             for (Tuple tuple:tuples){
-                 String teamName = tuple.get(0, String.class);
+             for (Object[] object:tuples){
+                 String teamName = object[0].toString();
 
                  Long gamesPlayed = Long.valueOf(0);
-                 if(tuple.get(1) != null){
-                     gamesPlayed = tuple.get(1, Long.class);
+                 if(object[1] != null){
+                     gamesPlayed = (Long) object[1];
                  }
 
                  Long wins = Long.valueOf(0);
-                 if(tuple.get(2) != null){
-                     wins = tuple.get(2, Long.class);
+                 if(object[2] != null){
+                     wins = (Long) object[2];
                  }
 
                  Long losses = Long.valueOf(0);
-                 if(tuple.get(3) != null){
-                     losses = tuple.get(3, Long.class);
+                 if(object[3] != null){
+                     losses = (Long) object[3];
                  }
 
                  Long pf = Long.valueOf(0);
-                 if(tuple.get(4) != null){
-                     pf = tuple.get(4, Long.class);
+                 if(object[4] != null){
+                     pf = (Long) object[4];
                  }
 
                  Long pa = Long.valueOf(0);
-                 if(tuple.get(5) != null){
-                     pa = tuple.get(5, Long.class);
+                 if(object[5] != null){
+                     pa = (Long) object[5];
                  }
-                 int id = tuple.get(6, Integer.class);
+                 int id = (Integer) object[6];
                  TeamStanding teamStanding = new TeamStanding(
                 teamName, // team_name
                 id,

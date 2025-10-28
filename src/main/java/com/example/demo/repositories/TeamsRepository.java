@@ -63,7 +63,7 @@ public interface TeamsRepository extends JpaRepository<Team, Integer>{
             "    (SUM(CASE WHEN t.team_id = g.home_id THEN COALESCE(g.home_pts, 0) ELSE COALESCE(g.away_pts, 0) END) - \n" +
             "     SUM(CASE WHEN t.team_id = g.home_id THEN COALESCE(g.away_pts, 0) ELSE COALESCE(g.home_pts, 0) END)) DESC, \n" +
             "    games_played DESC;\n")
-    List<Tuple> findTeamStandingsByAgeGroup(@Param("ageGroup") String ageGroup);
+    List<Object[]> findTeamStandingsByAgeGroup(@Param("ageGroup") String ageGroup);
 
 
 
