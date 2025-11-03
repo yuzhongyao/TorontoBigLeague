@@ -1,16 +1,24 @@
 package com.example.demo.views.components;
 
+import com.example.demo.entities.Age;
 import com.example.demo.entities.Team;
 import com.example.demo.entities.TeamStanding;
 import com.example.demo.services.*;
+import com.example.demo.util.UTILS;
 import com.vaadin.flow.component.accordion.Accordion;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.shared.ThemeVariant;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.TabSheet;
 import com.vaadin.flow.component.tabs.TabSheetVariant;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.spring.security.AuthenticationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -116,6 +124,33 @@ public class TeamStandingsGrid extends VerticalLayout {
 
                 Dialog editor = new Dialog();
                 editor.setHeaderTitle("Edit Team Details");
+
+                VerticalLayout layout = new VerticalLayout();
+
+                TextField name = new TextField("Team Name");
+                name.setValue(team.getTeam_name());
+
+                ComboBox<Age> ageComboBox = new ComboBox<>("Age Group");
+                ageComboBox.setItems(agesService.getAll());
+                ageComboBox.setItemLabelGenerator(Age::getAge_group);
+                ageComboBox.setValue(team.getAge());
+
+                Button saveButton = new Button("Save");
+                saveButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_SUCCESS);
+                saveButton.addClickListener(event -> {
+                    team.setTeam_name(name.getValue());
+                    team.setAge(ageComboBox.getValue());
+                    teamsService.save(team);
+                    UTILS.showNotification(new Notification(),"SUCCESSFULLY SAVED", true);
+                    editor.close();
+                });
+
+                layout.add(name,ageComboBox);
+
+
+                editor.add(layout);
+                editor.getFooter().add(saveButton);
+                editor.open();
 
             });
         }
