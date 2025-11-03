@@ -36,8 +36,8 @@ public class ScheduleGrid extends VerticalLayout {
     private final SeasonsService seasonsService;
     private final LocationsService locationsService;
 
-    Grid<Game> pastMiddleSchoolGames = new Grid<>(Game.class, false);
-    Grid<Game> upcomingMiddleSchoolGames = new Grid<>(Game.class, false);
+//    Grid<Game> pastMiddleSchoolGames = new Grid<>(Game.class, false);
+//    Grid<Game> upcomingMiddleSchoolGames = new Grid<>(Game.class, false);
 
     Grid<Game> pastJrGames = new Grid<>(Game.class, false);
     Grid<Game> upcomingJrGames = new Grid<>(Game.class, false);
@@ -57,15 +57,15 @@ public class ScheduleGrid extends VerticalLayout {
         this.setAlignItems(Alignment.CENTER);
         TabSheet tabSheet = new TabSheet();
 
-        configureGrid(pastMiddleSchoolGames);
+//        configureGrid(pastMiddleSchoolGames);
         configureGrid(pastJrGames);
         configureGrid(pastSrGames);
 
-        configureGrid(upcomingMiddleSchoolGames);
+//        configureGrid(upcomingMiddleSchoolGames);
         configureGrid(upcomingJrGames);
         configureGrid(upcomingSrGames);
 
-        Tab grade8 = new Tab("Grade 8");
+//        Tab grade8 = new Tab("Grade 8");
 
 
         Tab jr = new Tab("Grade 9/10 | Jr Prep");
@@ -73,9 +73,9 @@ public class ScheduleGrid extends VerticalLayout {
 
         Tab sr = new Tab("Grade 11/12 | Sr Prep");
 
-        Accordion middleSchoolAccordian = new Accordion();
-        middleSchoolAccordian.add("Upcoming Games", upcomingMiddleSchoolGames);
-        middleSchoolAccordian.add("Past Games", pastMiddleSchoolGames );
+//        Accordion middleSchoolAccordian = new Accordion();
+//        middleSchoolAccordian.add("Upcoming Games", upcomingMiddleSchoolGames);
+//        middleSchoolAccordian.add("Past Games", pastMiddleSchoolGames );
 
         Accordion jrAccordion = new Accordion();
         jrAccordion.add("Upcoming Games", upcomingJrGames);
@@ -86,7 +86,7 @@ public class ScheduleGrid extends VerticalLayout {
         srAccordion.add("Past Games", pastSrGames );
 
 
-        tabSheet.add(grade8, middleSchoolAccordian);
+//        tabSheet.add(grade8, middleSchoolAccordian);
         tabSheet.add(jr,jrAccordion);
         tabSheet.add(sr,srAccordion);
 
@@ -228,14 +228,10 @@ public class ScheduleGrid extends VerticalLayout {
         }
 
 
-        if(grid.equals(pastMiddleSchoolGames)){
-            grid.setItems(gamesService.getPastMiddleSchoolGames());
-        } else if (grid.equals(pastJrGames)) {
+        if (grid.equals(pastJrGames)) {
             grid.setItems(gamesService.getPastJrGames());
         }
-        else if(grid.equals(upcomingMiddleSchoolGames)){
-            grid.setItems(gamesService.getMiddleSchoolGames());
-        } else if (grid.equals(upcomingJrGames)) {
+        else if (grid.equals(upcomingJrGames)) {
             grid.setItems(gamesService.getJrGames());
         }else if(grid.equals(upcomingSrGames)) {
             grid.setItems(gamesService.getSrGames());

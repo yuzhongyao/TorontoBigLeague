@@ -81,13 +81,13 @@ public class TeamStandingsGrid extends VerticalLayout {
         List<TeamStanding> srPrepStandings = teamsService.findTeamStandings(7);
         srPrepGrid.setItems(srPrepStandings);
 
-        ConfigureGrid(grade8);
+//        ConfigureGrid(grade8);
         ConfigureGrid(jrRepGrid);
         ConfigureGrid(srRepGrid);
         ConfigureGrid(jrPrepGrid);
         ConfigureGrid(srPrepGrid);
 
-        repAccordian.add("Grade 8", grade8);
+//        repAccordian.add("Grade 8", grade8);
         repAccordian.add("JR Rep", jrRepGrid);
         repAccordian.add("SR Rep", srRepGrid);
 
