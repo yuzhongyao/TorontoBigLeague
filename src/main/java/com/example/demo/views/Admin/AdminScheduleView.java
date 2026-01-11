@@ -105,7 +105,8 @@ public class AdminScheduleView extends VerticalLayout {
                     List<Team> teams = teamsService.findAllByAgeGroup(age.getValue());
                     away.setItems(teams);
                     home.setItems(teams);
-
+                    away.setItemLabelGenerator(Team::getTeamNameAndAge);
+                    home.setItemLabelGenerator(Team::getTeamNameAndAge);
                     sessionComboBox.setItems(sessionsService.getSessionsByAge(age.getValue()));
                 }
             });

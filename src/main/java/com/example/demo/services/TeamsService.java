@@ -27,6 +27,9 @@ public class TeamsService {
     }
 
     public List<Team> findAllByAgeGroup(Age age){
+        if (age.getAge_group().equals("All")){
+            return teamsRepository.findAll();
+        }
         return teamsRepository.findAllByAgeGroup(age.getAge_id());
     }
 
