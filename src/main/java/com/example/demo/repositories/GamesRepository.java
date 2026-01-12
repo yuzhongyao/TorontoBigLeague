@@ -35,26 +35,26 @@ public interface GamesRepository extends JpaRepository<Game, Integer> {
 
     //CHECK age id of "SR" Age group
 
-    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 35) " +
+    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 35 or age_id = 67) " +
             "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
             "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getPastSrGames();
 
     //CHECK age id of "JR" Age group
-    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 34) " +
+    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 34 or age_id = 67) " +
             "AND games.game_date < CURRENT_DATE - INTERVAL '3 day' " +
             "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getPastJrGames();
 
 
     //CHECK age id of "SR" Age group
-    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 35) " +
+    @Query(value = "select * from games where (age_id = 7 or age_id = 9 or age_id = 35 or age_id = 67) " +
             "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
             "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getSrUpcomingGames();
 
     //CHECK age id of "JR" Age group
-    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 34) " +
+    @Query(value = "select * from games where (age_id = 6 or age_id = 8 or age_id = 34 or age_id = 67) " +
             "AND games.game_date >= CURRENT_DATE - INTERVAL '3 day' " +
             "ORDER BY games.game_date, games.game_time", nativeQuery = true)
     List<Game> getJrUpcomingGames();
