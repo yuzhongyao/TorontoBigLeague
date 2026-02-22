@@ -33,6 +33,10 @@ public class TeamsService {
         return teamsRepository.findAllByAgeGroup(age.getAge_id());
     }
 
+    public List<Team> findAll(){
+        return teamsRepository.findAll();
+    }
+
     public List<Team> findAllSenior(){
         return teamsRepository.findAllSenior();
     }

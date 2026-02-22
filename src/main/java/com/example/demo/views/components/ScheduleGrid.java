@@ -1,5 +1,6 @@
 package com.example.demo.views.components;
 
+import com.example.demo.entities.Age;
 import com.example.demo.entities.Game;
 import com.example.demo.entities.Location;
 import com.example.demo.entities.Team;
@@ -168,9 +169,9 @@ public class ScheduleGrid extends VerticalLayout {
                 timePicker.setValue(game.getGame_time());
                 ComboBox<Team> away = new ComboBox<>("Away Team");
 
-                List<Team> teams =teamsService.findAllByAgeGroup(game.getAge_id());
+                List<Team> teams =teamsService.findAll();
                 away.setItems(teams);
-                away.setItemLabelGenerator(Team::getTeam_name);
+                away.setItemLabelGenerator(Team::getTeamNameAndAge);
                 away.setValue(game.getAway_id());
 
 //                TextField awayPoints = new TextField("Away Points");
@@ -178,7 +179,7 @@ public class ScheduleGrid extends VerticalLayout {
                 awayPoints.setValue(String.valueOf(game.getAway_pts()));
 
                 ComboBox<Team> home = new ComboBox<>("Home Team");
-                home.setItemLabelGenerator(Team::getTeam_name);
+                home.setItemLabelGenerator(Team::getTeamNameAndAge);
                 home.setItems(teams);
                 home.setValue(game.getHome_id());
 //                TextField homePoints = new TextField("Home Points");
