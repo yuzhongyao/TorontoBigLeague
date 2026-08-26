@@ -76,7 +76,7 @@ public class MainView extends VerticalLayout {
         prep2.addClassName("poster");
 
         Image prep3 = new Image();
-        prep3.setSrc("https://dpaacptq7x5t0.cloudfront.net/2.png");
+        prep3.setSrc("https://dpaacptq7x5t0.cloudfront.net/3.png");
         prep3.addClassName("poster");
 
 
