@@ -68,21 +68,25 @@ public class MainView extends VerticalLayout {
 //        highPosterDiv.addClassName("poster-container2");
         //high school poster
         Image prep1 = new Image();
-        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep1.png");
+        prep1.setSrc("https://dpaacptq7x5t0.cloudfront.net/1.png");
         prep1.addClassName("poster");
 
         Image prep2 = new Image();
-        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/prep2.png");
+        prep2.setSrc("https://dpaacptq7x5t0.cloudfront.net/2.png");
         prep2.addClassName("poster");
+
+        Image prep3 = new Image();
+        prep3.setSrc("https://dpaacptq7x5t0.cloudfront.net/2.png");
+        prep3.addClassName("poster");
 
 
         //high school list of league features
         UnorderedList highList = new UnorderedList();
-        ListItem item8 = new ListItem("$780 per session");
+        ListItem item8 = new ListItem("$820 per session");
         ListItem item9 = new ListItem("4 games per session");
         ListItem item10 = new ListItem("Teams MUST commit to at least 2 sessions to qualify for Championship");
         //ListItem item11 = new ListItem("GUARANTEED PRICE FREEZE for fully registered teams that return every year");
-        ListItem item12 = new ListItem("Early registrants before September 30 are able to receive Adidas Team Pack* (contact for info)");
+        ListItem item12 = new ListItem("Early registrants before October can receive early bird discounts* (contact for info)");
         ListItem item13 = new ListItem("Full games recorded and uploaded to YouTube");
         ListItem item14 = new ListItem("Team highlight videos on social media");
 
@@ -99,6 +103,7 @@ public class MainView extends VerticalLayout {
 
         highPosterDiv.add(prep1);
         highPosterDiv.add(prep2);
+        highPosterDiv.add(prep3);
         highPosterDiv.add(highList);
         highDiv.add(highPosterDiv);
 
