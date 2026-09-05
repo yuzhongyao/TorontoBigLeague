@@ -86,7 +86,7 @@ public class MainLayout extends AppLayout {
 
         RouterLink aboutUs3 = new RouterLink("About Us", AboutUsView.class);
         RouterLink schedule3 = new RouterLink("Schedule", ScheduleView.class);
-        RouterLink standing3 = new RouterLink("Schedule", ScheduleView.class);
+        RouterLink standing3 = new RouterLink("Standings", Standings.class);
         RouterLink contactUs3 = new RouterLink("Contact Us", ContactUsView.class);
 //        RouterLink registration3 = new RouterLink("Register", RegistrationView.class);
 
